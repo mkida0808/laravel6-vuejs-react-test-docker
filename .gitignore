@@ -1,0 +1,6 @@
+mysql/
+php/
+phpmyadmin/
+docker-compose.yml
+.gitignore
+.DS_Store
