@@ -1,0 +1,64 @@
+version: '3.9'
+
+services:
+  # DBコンテナ - Laravel6
+  db:
+    image: mysql:8.0.29
+    container_name: db
+    platform: linux/x86_64
+    volumes:
+      - db_data:/var/lib/mysql
+      # - ./php/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - 3306:3306
+    restart: always
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci --default-authentication-plugin=mysql_native_password
+    tty: true
+    stdin_open: true
+    privileged: true
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: Passwd123
+      TZ: Asia/Tokyo
+
+  # WEBコンテナ - CentOS 7.9
+  php:
+    container_name: php
+    platform: linux/x86_64
+    build: php/
+    restart: always
+    ports:
+      - 8000:80
+    volumes:
+      - ./src:/var/www/html/src
+      # - ./php/httpd.conf:/etc/httpd/conf/httpd.conf
+    tty: true
+    stdin_open: true
+    privileged: true
+    depends_on:
+      - db
+
+  # PMAコンテナ - Laravel6
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    platform: linux/x86_64
+    restart: always
+    depends_on:
+      - db
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOSTS=db
+      - PMA_USER=user
+      - PMA_PASSWORD=Passwd123
+    ports:
+      - 8001:80
+    volumes:
+      - ./phpmyadmin/l6x/sessions:/sessions
+
+volumes:
+  db_data:
+
+
