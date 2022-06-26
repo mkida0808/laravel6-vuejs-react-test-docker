@@ -144,3 +144,19 @@ for (let kk = 0; kk <= 10; kk++) {
     if (kk === 5) break; // 条件で処理を止める
     console.log(kk);
 }
+
+// 関数
+console.log('------');
+function showAd(message = 'Ad Normal') {
+    console.log(`${message}`);
+}
+showAd('Ad No.1');
+showAd();
+showAd('Ad No.3');
+
+function calc(a, b) {
+    return a + b;
+}
+
+const total = calc(1, 2) + calc(3, 4); // 10
+console.log(total);
