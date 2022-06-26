@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dotinstall/js_basic', function () {
+    return view('dotinstall.js_basic.index');
+});
