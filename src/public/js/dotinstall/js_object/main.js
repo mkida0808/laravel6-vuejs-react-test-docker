@@ -97,4 +97,12 @@
     // });
     const updatePrices = prices.map(price => price + 20);
     console.log(updatePrices);
+
+    // filter
+    const numbers = [1, 4, 7, 8, 10];
+    // const evenNumbers = numbers.filter((number) => {
+    //     return number % 2 === 0 ? true : false;
+    // });
+    const evenNumbers = numbers.filter(number => number % 2 === 0);
+    console.log(evenNumbers);
 }
