@@ -60,7 +60,7 @@ console.log(price4 === 1000); // false
 console.log(price4 !== 1000); // true
 
 // 真偽の判定注意点
-// false <- 0, null, undefined, '', false
+// false <- 0, null, undefined, '', false, NaN(Not a Number)
 // true <- それ以外
 console.log('------')
 console.log(Boolean(0)); // false
@@ -69,3 +69,47 @@ console.log(Boolean(undefined)); // false
 console.log(Boolean('')); // false
 console.log(Boolean(false)); // false
 console.log(Boolean('hello')); // true
+
+// 条件分岐
+console.log('------');
+const score = 70;
+
+if (score >= 80) {
+    console.log('Great!');
+} else if (score >= 60) {
+    console.log('Good.');
+} else {
+    console.log('OK...');
+}
+
+// 条件演算子
+const score2 = 50;
+score2 >= 60 ? console.log('Great!') : console.log('OK...');
+
+// 条件演算子の中に比較演算子
+console.log('------');
+const score3 = 60;
+const name = 'kida';
+score3 >= 80 && name === 'kida' ? console.log('Great.') : console.log('Bad.');
+score3 >= 80 || name === 'kida' ? console.log('Great.') : console.log('Bad.');
+!(score3 >= 80 && name === 'kida') ? console.log('Great.') : console.log('Bad.');
+
+// switch条件演算子
+console.log('------');
+const signal = 'pink';
+
+switch (signal) {
+    case 'red':
+        console.log('stop!');
+        break;
+    case 'yellow':
+        console.log('caution!');
+        break;
+    case 'blue':
+    case 'green':
+        console.log('Go!');
+        break;
+    default:
+        console.log('Wrong signal!');
+        break;
+}
