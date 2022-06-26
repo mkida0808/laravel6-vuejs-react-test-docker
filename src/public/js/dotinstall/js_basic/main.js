@@ -35,3 +35,17 @@ price3 *= 2; // 1200
 price3++; // 1201
 price3--; // 1200
 console.log(price3);
+
+console.log('------')
+console.log(typeof 'hello'); // string
+console.log(typeof 5); // number
+console.log(typeof true); // boolean
+console.log(typeof undefined); // undefined
+console.log(typeof null); // null ※コンソール上ではobjectとなる
+
+console.log('------')
+console.log('5' * 3); // 15
+console.log('5' - '3'); // 2
+console.log('5' + 3); // 53（文字列連結になる）
+console.log(parseInt('5', 10) + 3); // 8（数値文字列5を10進数の5に変換して3を加算する）
+console.log(parseInt('hello', 10)); // Not a Number（数値文字列以外の文字列は数値に変換できない）
