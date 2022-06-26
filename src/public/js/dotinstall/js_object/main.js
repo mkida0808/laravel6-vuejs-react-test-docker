@@ -55,4 +55,38 @@
     // }
     const endScoresSum = (d, e) => d + e;
     console.log(`endScoresSum: ${endScoresSum(...endScores)}`);
+
+    // 分割代入
+    console.log('----------');
+    const test1Scores = [10, 20, 30, 40];
+    const [a, b, c, d] = test1Scores;
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log(d);
+
+    console.log('----------');
+    const test2Scores = [50, 60, 70, 80, 90];
+    const [e, f, ...others] = test2Scores;
+    console.log(e);
+    console.log(f);
+    console.log(others);
+
+    // 分割代入による値の交換
+    let x = 150;
+    let y = 300;
+
+    [x, y] = [y, x];
+    console.log(x);
+    console.log(y);
+
+    // forEachによるループ
+    const test3Scores = [67, 30, 50, 19];
+    // const test3ScoresDisplay = (score, index) => {
+    //     console.log(`test3Score ${index}: ${score}`);
+    // }
+    // test3Scores.forEach(test3ScoresDisplay);
+    test3Scores.forEach((score, index) => {
+        console.log(`test3Score ${index}: ${score}`);
+    });
 }
