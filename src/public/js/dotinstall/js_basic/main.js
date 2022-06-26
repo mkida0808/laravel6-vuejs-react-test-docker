@@ -49,3 +49,23 @@ console.log('5' - '3'); // 2
 console.log('5' + 3); // 53（文字列連結になる）
 console.log(parseInt('5', 10) + 3); // 8（数値文字列5を10進数の5に変換して3を加算する）
 console.log(parseInt('hello', 10)); // Not a Number（数値文字列以外の文字列は数値に変換できない）
+
+console.log('------')
+const price4 = 1200;
+console.log(price4 > 1000); // true
+console.log(price4 < 1000); // false
+console.log(price4 >= 1000); // true
+console.log(price4 <= 1000); // false
+console.log(price4 === 1000); // false
+console.log(price4 !== 1000); // true
+
+// 真偽の判定注意点
+// false <- 0, null, undefined, '', false
+// true <- それ以外
+console.log('------')
+console.log(Boolean(0)); // false
+console.log(Boolean(null)); // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean('')); // false
+console.log(Boolean(false)); // false
+console.log(Boolean('hello')); // true
