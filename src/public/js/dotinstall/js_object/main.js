@@ -37,4 +37,22 @@
         console.log(`Score ${i}: ${scores[i]}`);
     }
 
+    // スプレッド構文
+    console.log('----------');
+    const firstScores = [10, 46, 23];
+    const endScores = [90, 65];
+    const allScores = [...firstScores, ...endScores]; // スプレッド構文
+    console.log(allScores);
+
+    // function firstScoresSum(a, b, c) {
+    //     return a + b + c;
+    // }
+    const firstScoresSum = (a, b, c) => a + b + c;
+    console.log(`firstScoresSum: ${firstScoresSum(...firstScores)}`);
+
+    // function endScoresSum(d, e) {
+    //     return d + e;
+    // }
+    const endScoresSum = (d, e) => d + e;
+    console.log(`endScoresSum: ${endScoresSum(...endScores)}`);
 }
