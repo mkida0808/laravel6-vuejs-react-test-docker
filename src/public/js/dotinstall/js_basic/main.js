@@ -113,3 +113,34 @@ switch (signal) {
         console.log('Wrong signal!');
         break;
 }
+
+// ループ
+console.log('------');
+for (let i = 1; i <= 10; i++) {
+    console.log(`${i}.hello`);
+}
+
+console.log('------');
+let hp = 100;
+while(hp > 0) {
+    console.log(`${hp} HP left!`);
+    hp -= 15;
+}
+
+let hp2 = -50;
+do {
+    console.log(`${hp2} HP left!`);
+} while (hp2 > 0);
+
+// ループの中で処理を止める、一部処理をスキップする
+console.log('------');
+for (let k = 0; k <= 10; k++) {
+    if (k % 3 !== 0) continue; // 条件の処理だけ止める
+    console.log(k);
+}
+
+console.log('------');
+for (let kk = 0; kk <= 10; kk++) {
+    if (kk === 5) break; // 条件で処理を止める
+    console.log(kk);
+}
