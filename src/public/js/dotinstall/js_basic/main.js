@@ -182,3 +182,19 @@ const sum3 = j => j * 2;
 // const j = 10;
 console.log(sum3(10));
 
+// スコープ
+console.log('------');
+const x = 2; // グローバルスコープ
+function f() {
+    // const x = 1;
+    console.log(x);
+}
+f();
+console.log(x);
+
+{
+    const y = 200;
+    console.log(y);
+}
+
+

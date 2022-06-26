@@ -14,5 +14,9 @@
     </script>
     {{-- <script src="../../js/dotinstall/js_basic/main.js"></script> --}}
     <script src="{{ asset('js/dotinstall/js_basic/main.js') }}"></script>
+    <script>
+        const y = 500;
+        console.log(y);
+    </script>
 </body>
 </html>
