@@ -89,4 +89,12 @@
     test3Scores.forEach((score, index) => {
         console.log(`test3Score ${index}: ${score}`);
     });
+
+    // map
+    const prices = [140, 290, 610];
+    // const updatePrices = prices.map((price) => {
+    //     return price + 20;
+    // });
+    const updatePrices = prices.map(price => price + 20);
+    console.log(updatePrices);
 }
