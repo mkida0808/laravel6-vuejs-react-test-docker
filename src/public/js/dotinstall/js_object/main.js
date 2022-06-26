@@ -105,4 +105,45 @@
     // });
     const evenNumbers = numbers.filter(number => number % 2 === 0);
     console.log(evenNumbers);
+
+    // オブジェクト
+    console.log('----------');
+    const point = {
+        x: 100,
+        y: 180,
+    };
+    point.x = 120;
+    point['y'] = 130;
+    point.z = 250;
+    delete point.y;
+
+    const otherProps = {
+        r: 4,
+        color: 'red',
+        ...point,
+    };
+    console.log(otherProps);
+
+    console.log('----------');
+
+    const {r, color, ...otherPoint} = otherProps;
+    console.log(r);
+    console.log(color);
+    console.log(otherPoint);
+
+    // Object.keys（オブジェクトのキーを取り出して、オブジェクトの値を取り出す）
+    const testPoint = {
+        a: 100,
+        b: 180,
+    };
+    const keys = Object.keys(testPoint); // testPointsのキーが配列で出力
+    keys.forEach(key => {
+        console.log(`Key: ${key} Value: ${testPoint[key]}`); // オブジェクトのキー、値を表示
+    })
+    const testPoints = [
+        {x: 30, y: 20},
+        {x: 10, y: 50},
+        {x: 40, y: 40},
+    ];
+    console.log(testPoints[1].y);
 }
