@@ -160,3 +160,25 @@ function calc(a, b) {
 
 const total = calc(1, 2) + calc(3, 4); // 10
 console.log(total);
+
+// 関数式（無名関数）
+console.log('------');
+const multi = function (c, d, e) {
+    return c * d * e;
+}
+
+const total2 = multi (1, 2, 3) + multi (2, 2, 2); // 6 + 8 = 14
+console.log(total2);
+
+// アロー関数
+console.log('------');
+const sum2 = (f, g, h) => f + g + h;
+
+const total3 = sum2 (1, 2, 3) + sum2 (2, 2, 2); // 6 + 8 = 14
+console.log(total3);
+
+console.log('------');
+const sum3 = j => j * 2;
+// const j = 10;
+console.log(sum3(10));
+
