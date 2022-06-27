@@ -146,4 +146,17 @@
         {x: 40, y: 40},
     ];
     console.log(testPoints[1].y);
+
+    // js変数の挙動（特に配列やオブジェクトなど）
+    console.log('----------');
+    let xx = 1;  let yy = xx; xx = 5;
+    console.log(xx);
+    console.log(yy);
+
+    let xxx = [0, 0];
+    let yyy = [...xxx]; // スプレッド演算子で配列の要素を展開
+    xxx[0] = 5;
+
+    console.log(xxx);
+    console.log(yyy);
 }
