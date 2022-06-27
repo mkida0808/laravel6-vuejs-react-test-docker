@@ -202,4 +202,31 @@
     console.log(Math.random()); // Mathランダム（0〜1のランダム数値を表示する）
 
     console.log(Math.floor(Math.random() * 6) + 1); // 0〜6までのランダム整数値を表示する
+
+    // 現在の日時の扱い
+    console.log('----------');
+    const dateTime = new Date();
+    console.log(dateTime);
+
+    // 2022/06/28 3:22 現在
+    console.log(dateTime.getFullYear()); // 2022
+    console.log(dateTime.getMonth() + 1); // 6
+    console.log(dateTime.getDate()); // 28
+    console.log(dateTime.getDay()); // 2: Tuesday
+    console.log(dateTime.getHours()); // 3
+    console.log(dateTime.getMinutes()); // 22
+    console.log(dateTime.getSeconds()); // 59
+    console.log(dateTime.getMilliseconds()); // 926
+
+    console.log(`${dateTime.getFullYear()}年${dateTime.getMonth() + 1}月${dateTime.getDate()}日`)
+
+    console.log(dateTime.getTime()); // UTC 協定世界時
+
+    // 特定の日時の扱い
+    console.log('----------');
+    const dateTime2 = new Date(2020, 10, 23, 20, 10, 30); // 2020/10/23 20:10:30
+    dateTime2.setHours(23, 59, 59); // 2020/10/23 23:59:59
+    dateTime2.setDate(dateTime2.getDate() + 3); // 取得日時から3日後を指定する
+    console.log(dateTime2);
+
 }
