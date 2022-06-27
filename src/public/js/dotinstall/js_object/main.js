@@ -229,4 +229,42 @@
     dateTime2.setDate(dateTime2.getDate() + 3); // 取得日時から3日後を指定する
     console.log(dateTime2);
 
+    // alert(), confirm()
+    // alert('hello');
+
+    // const answer = confirm('テスト：ダイアログが表示されましたか？');
+    // answer ? console.log('確認ありがとうございます') : console.log('あれれ？表示されません？');
+
+    // setInterval()
+    console.log('----------');
+    // let i = 1;
+    // function showTime() {
+    //     console.log(new Date());
+    //     i > 2 ? clearInterval(intervalId) : i++;
+    // }
+
+    // const showTime = function () {
+    //     console.log(new Date());
+    //     i > 2 ? clearInterval(intervalId) : i++;
+    // }
+
+    // const showTime = () => {
+    //     console.log(new Date());
+    //     i > 2 ? clearInterval(intervalId) : i++;
+    // }
+
+    // const intervalId = setInterval(() => {
+    //     console.log(new Date());
+    //     i > 2 ? clearInterval(intervalId) : i++;
+    // }, 1000);
+
+    // setTimeout()
+    // const ii = 1;
+    // function showTime2() {
+    //     console.log(new Date());
+    //     const timeoutId = setTimeout(showTime2, 1000);
+    //     ii++;
+    //     if (ii > 2) clearTimeout(timeoutId);
+    // }
+    // showTime2();
 }
