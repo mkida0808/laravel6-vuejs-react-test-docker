@@ -159,4 +159,47 @@
 
     console.log(xxx);
     console.log(yyy);
+
+    // 文字列の操作（文字列の長さ、部分文字列取得（複数）、部分文字列取得（単数））
+    console.log('----------');
+    const str = 'hello';
+    console.log(str.length); // 5
+    console.log(str.substring(2, 5)); // llo
+    console.log(str[1]); // e
+
+    // 文字列の操作（配列の要素を1つの文字列に結合、1つの文字列を配列の要素（文字列＆数値）に分離）
+    console.log('----------');
+
+    const day = [2022, 6, 28];
+    console.log(day.join('/')); // '/'で配列の要素を1つの文字列に結合
+    console.log(day.join(''));
+
+    const time = '2:15:20';
+    console.log(time.split(':')); // ':'で文字列を分割して文字列要素の配列を作る
+    const [hour, minute, second] = time.split(':'); // 文字列分割して文字列要素を持つ配列から分割代入でそれぞれの単体変数に値を入れる
+    console.log(hour);
+    console.log(minute);
+    console.log(second);
+
+    // 数値計算の操作
+    console.log('----------');
+    const baseballScores = [1, 2, 3, 2, 1, 2, 3, 2, 1];
+    let baseballScoresSum = 0;
+
+    baseballScores.forEach(baseballScore => {
+        baseballScoresSum += baseballScore;
+    })
+    const baseballScoresAvg = baseballScoresSum / baseballScores.length;
+
+    console.log(`baseballScoresSum: ${baseballScoresSum}`); // 17
+    console.log(`baseballScoresAvg: ${baseballScoresAvg}`); // 1.8888888888888888
+
+    console.log(Math.floor(baseballScoresAvg)); // 小数点切り捨て 1
+    console.log(Math.ceil(baseballScoresAvg)); // 小数点切り上げ 2
+    console.log(Math.round(baseballScoresAvg)); // 四捨五入 2
+    console.log(baseballScoresAvg.toFixed(3)); // 四捨五入して小数点を3桁まで表示する
+
+    console.log(Math.random()); // Mathランダム（0〜1のランダム数値を表示する）
+
+    console.log(Math.floor(Math.random() * 6) + 1); // 0〜6までのランダム整数値を表示する
 }
