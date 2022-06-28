@@ -24,3 +24,8 @@ Route::get('/dotinstall/js_basic', function () {
 Route::get('/dotinstall/js_object', function () {
     return view('dotinstall.js_object.index');
 });
+
+// JSDOM編
+Route::get('/dotinstall/js_dom', function () {
+    return view('dotinstall.js_dom.index');
+});
