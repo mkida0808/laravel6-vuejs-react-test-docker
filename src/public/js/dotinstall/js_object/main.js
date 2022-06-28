@@ -280,4 +280,66 @@
         console.log(e);
     }
     console.log('Finished!');
+
+    // クラス（オブジェクト）
+    console.log('----------');
+    class Post { // 親クラス
+        constructor(text) {
+            this.text = text;
+            this.likeCount = 0;
+        }
+
+        show() {
+            console.log(`${this.text} - ${this.likeCount} likes`);
+        }
+
+        like() {
+            this.likeCount++;
+            this.show();
+        }
+
+        // 静的メソッド（thisは使えない）
+        static showInfo() {
+            console.log('class version 1.0');
+        }
+    }
+    class sponsoredPost extends Post { // 子クラス
+        constructor(text, sponsor) {
+            // this.text = text;
+            // this.likeCount = 0;
+            super(text);
+            this.sponsor = sponsor;
+        }
+
+        show() {
+            // console.log(`${this.text} - ${this.likeCount} likes`);
+            super.show();
+            console.log(`... sponsored by ${this.sponsor}`);
+        }
+
+        // like() {
+        //     this.likeCount++;
+        //     this.show();
+        // }
+
+        // 静的メソッド（thisは使えない）
+        static showInfo() {
+            console.log('class version 1.0');
+        }
+    }
+    const posts = [
+        new Post('JavaScriptの勉強中'),
+        new Post('プログラミングの勉強中'),
+        new sponsoredPost('動画でマスター', 'mkida'),
+    ];
+    // show(posts[0]);
+    // show(posts[1]);
+    // posts[0].show();
+    // // posts[1].show();
+    // posts[0].like();
+    // posts[1].like();
+    // Post.showInfo();
+    posts[2].show();
+    posts[2].like();
+
 }
