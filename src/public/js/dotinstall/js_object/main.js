@@ -267,4 +267,17 @@
     //     if (ii > 2) clearTimeout(timeoutId);
     // }
     // showTime2();
+
+    // 例外処理
+    console.log('----------');
+
+    // const name = 'kida';
+    const name = 5;
+
+    try {
+        console.log(name.toUpperCase());
+    } catch (e) {
+        console.log(e);
+    }
+    console.log('Finished!');
 }
