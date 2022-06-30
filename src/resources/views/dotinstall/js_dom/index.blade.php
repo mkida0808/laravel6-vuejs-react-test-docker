@@ -21,7 +21,15 @@
     <p>こんにちは。こんにちは。こんにちは。</p>
     <p>こんにちは。こんにちは。こんにちは。</p>
 
-    <button>実行</button>
+    <button>実行1</button>
+
+    <ul>
+        <li>item 0</li>
+        <li>item 1</li>
+        <li>item 2</li>
+    </ul>
+
+    <button id="button2">実行2</button>
 
     <script src="{{ asset('js/dotinstall/js_dom/main.js') }}"></script>
 </body>
