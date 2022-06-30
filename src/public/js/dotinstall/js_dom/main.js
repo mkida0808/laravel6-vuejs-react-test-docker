@@ -40,12 +40,19 @@
     // });
 
     // DOMによる要素の複製、挿入
-    document.getElementById('button2').addEventListener('click', () => {
-        const item0 = document.querySelectorAll('li')[0];
-        const copy = item0.cloneNode(true);
+    // document.getElementById('button2').addEventListener('click', () => {
+    //     const item0 = document.querySelectorAll('li')[0];
+    //     const copy = item0.cloneNode(true);
 
-        const ul = document.querySelector('ul');
-        const item2 = document.querySelectorAll('li')[2];
-        ul.insertBefore(copy, item2);
+    //     const ul = document.querySelector('ul');
+    //     const item2 = document.querySelectorAll('li')[2];
+    //     ul.insertBefore(copy, item2);
+    // });
+
+    // DOMによる要素の削除
+    document.getElementById('button2').addEventListener('click', () => {
+        const item1 = document.querySelectorAll('li')[1];
+        // item1.remove(); // 古いブラウザでは使えない可能性あり
+        document.querySelector('ul').removeChild(item1);
     });
 }
