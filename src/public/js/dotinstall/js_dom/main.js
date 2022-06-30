@@ -50,9 +50,19 @@
     // });
 
     // DOMによる要素の削除
-    document.getElementById('button2').addEventListener('click', () => {
-        const item1 = document.querySelectorAll('li')[1];
-        // item1.remove(); // 古いブラウザでは使えない可能性あり
-        document.querySelector('ul').removeChild(item1);
+    // document.getElementById('button2').addEventListener('click', () => {
+    //     const item1 = document.querySelectorAll('li')[1];
+    //     // item1.remove(); // 古いブラウザでは使えない可能性あり
+    //     document.querySelector('ul').removeChild(item1);
+    // });
+
+    // input要素の操作
+    document.getElementById('button3').addEventListener('click', () => {
+        const li = document.createElement('li');
+        const text = document.querySelector('input');
+        li.textContent = text.value;
+        document.querySelector('ul').appendChild(li);
+        text.value = '';
+        text.focus();
     });
 }
