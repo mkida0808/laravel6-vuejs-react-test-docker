@@ -46,7 +46,12 @@
     <input type="radio" name="color" value="blue"> 青
     <input type="radio" name="color" value="yellow"> 黄
     <button id="button5">ラジオボタンの色を追加</button>
+    <ul></ul>
 
+    <input type="checkbox" value="red"> 赤
+    <input type="checkbox" value="blue"> 青
+    <input type="checkbox" value="yellow"> 黄
+    <button id="button6">Add</button>
     <ul></ul>
 
     <script src="{{ asset('js/dotinstall/js_dom/main.js') }}"></script>
