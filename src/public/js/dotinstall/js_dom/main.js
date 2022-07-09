@@ -72,4 +72,18 @@
         li.textContent = `${color.value} - ${color.selectedIndex}`;
         document.querySelector('ul').appendChild(li);
     });
+
+    document.getElementById('button5').addEventListener('click', () => {
+        const colors = document.querySelectorAll('input');
+        let selectedColor;
+
+        colors.forEach(color => {
+            if (color.checked) {
+                selectedColor = color.value;
+            }
+        });
+        const li = document.createElement('li');
+        li.textContent = selectedColor;
+        document.querySelector('ul').appendChild(li);
+    });
 }
