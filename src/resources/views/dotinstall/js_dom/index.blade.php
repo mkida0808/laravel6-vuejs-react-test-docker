@@ -32,6 +32,15 @@
     <ul>
     </ul>
 
+    <select>
+        <option value="red">赤</option>
+        <option value="blue">青</option>
+        <option value="yellow">黄</option>
+    </select>
+    <button id="button4">信号機の色を追加</button>
+
+    <ul>
+    </ul>
 
     <script src="{{ asset('js/dotinstall/js_dom/main.js') }}"></script>
 </body>
