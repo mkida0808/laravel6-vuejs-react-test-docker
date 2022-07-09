@@ -66,6 +66,7 @@
         text.focus();
     });
 
+    // セレクトボックスの操作
     document.getElementById('button4').addEventListener('click', () => {
         const li = document.createElement('li');
         const color = document.querySelector('select');
@@ -73,6 +74,7 @@
         document.querySelector('ul').appendChild(li);
     });
 
+    // ラジオボタンの操作
     document.getElementById('button5').addEventListener('click', () => {
         const colors = document.querySelectorAll('input');
         let selectedColor;
@@ -87,6 +89,7 @@
         document.querySelector('ul').appendChild(li);
     });
 
+    // チェックボタンの操作
     document.getElementById('button6').addEventListener('click', () => {
         const colors = document.querySelectorAll('input');
         const selectedColors = [];
