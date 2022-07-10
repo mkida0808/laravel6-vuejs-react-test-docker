@@ -56,6 +56,8 @@
 
     <button id="button7">addEventListener</button>
 
+    <textarea></textarea>
+
     <script src="{{ asset('js/dotinstall/js_dom/main.js') }}"></script>
 </body>
 </html>
