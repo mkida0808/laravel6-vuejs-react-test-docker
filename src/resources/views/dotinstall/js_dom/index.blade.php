@@ -11,6 +11,12 @@
         .my-border {
             border-bottom: 4px solid orange;
         }
+        li {
+            cursor: pointer;
+        }
+        li.done {
+            text-decoration: line-through;
+        }
     </style>
 </head>
 <body>
@@ -62,6 +68,12 @@
         <input type="text">
         {{-- <button>Post</button> --}}
     </form>
+
+    <ul id="ul">
+        <li>TODO</li>
+        <li>TODO</li>
+        <li>TODO</li>
+    </ul>
 
     <script src="{{ asset('js/dotinstall/js_dom/main.js') }}"></script>
 </body>
