@@ -123,6 +123,7 @@
     //     console.log(e.key);
     // });
 
+    // フォームで使われる様々なイベント
     const text = document.querySelector('textarea');
     text.addEventListener('focus', () => {
         console.log('focus');
@@ -136,5 +137,14 @@
     });
     text.addEventListener('change', () => {
         console.log('change');
+    });
+
+    // フォームの送信
+    // document.querySelector('form').addEventListener('submit', () => {
+    //     console.log('submit');
+    // });
+    document.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('submit');
     });
 }

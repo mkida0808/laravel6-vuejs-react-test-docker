@@ -58,6 +58,11 @@
 
     <textarea></textarea>
 
+    <form>
+        <input type="text">
+        {{-- <button>Post</button> --}}
+    </form>
+
     <script src="{{ asset('js/dotinstall/js_dom/main.js') }}"></script>
 </body>
 </html>
