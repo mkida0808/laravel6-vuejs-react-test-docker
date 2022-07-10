@@ -54,6 +54,8 @@
     <button id="button6">Add</button>
     <ul></ul>
 
+    <button id="button7">addEventListener</button>
+
     <script src="{{ asset('js/dotinstall/js_dom/main.js') }}"></script>
 </body>
 </html>

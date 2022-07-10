@@ -104,4 +104,22 @@
         li.textContent = selectedColors;
         document.querySelector('ul').appendChild(li);
     });
+
+    // その他のイベントの挙動（addEventListener）
+    document.getElementById('button7').addEventListener('dblclick', () => {
+        console.log('Double Clicked!');
+    });
+
+    document.getElementById('button7').addEventListener('mousemove', () => {
+    // document.addEventListener('mousemove', () => {
+        console.log('mousemoved!');
+    });
+
+    document.addEventListener('mousemove', e => {
+        console.log(e.clientX, e.ClientY);
+    });
+
+    document.addEventListener('keydown', e => {
+        console.log(e.key);
+    });
 }
