@@ -29,3 +29,8 @@ Route::get('/dotinstall/js_object', function () {
 Route::get('/dotinstall/js_dom', function () {
     return view('dotinstall.js_dom.index');
 });
+
+// JS Intersection Observer API 編
+Route::get('/dotinstall/js_intersection_observer_api', function () {
+    return view('dotinstall.js_intersection_observer_api.index');
+});
