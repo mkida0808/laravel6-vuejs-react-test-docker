@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>My Site</title>
+    <link rel="stylesheet" href="{{ asset('css/js_intersection_observer_api/styles.css') }}">
 </head>
 <body>
     <h1>動物紹介</h1>
