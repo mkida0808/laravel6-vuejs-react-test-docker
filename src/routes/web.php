@@ -34,3 +34,8 @@ Route::get('/dotinstall/js_dom', function () {
 Route::get('/dotinstall/js_intersection_observer_api', function () {
     return view('dotinstall.js_intersection_observer_api.index');
 });
+
+// JSモーダルウインドウ編
+Route::get('/dotinstall/js_modalwindow', function () {
+    return view('dotinstall.js_modalwindow.index');
+});
