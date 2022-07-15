@@ -14,7 +14,8 @@
         }
     },
     {
-        threshold: 0.2,
+        threshold: 1,
+        rootMargin: '0px 0px -100px',
     });
 
     observer.observe(target);
