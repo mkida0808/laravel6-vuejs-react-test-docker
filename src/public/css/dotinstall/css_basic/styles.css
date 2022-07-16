@@ -43,6 +43,9 @@
     height: 200px;
     /* position: static; */
     position: relative;
+    border: 30px solid pink;
+    /* box5に合わせてボーダープロパティを配置する */
+    box-sizing: border-box;
 }
 
 .rect {
