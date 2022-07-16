@@ -12,6 +12,7 @@ header h1 {
     margin: 0;
     font-size: 22px;
     line-height: 64px;
+    text-decoration: underline;
 }
 
 .sp-menu {
@@ -30,6 +31,10 @@ header h1 {
 
 main {
     padding: 0 16px;
+}
+
+main p {
+    text-decoration: line-through;
 }
 
 .overlay {
@@ -91,6 +96,10 @@ main {
 
 .pc-menu {
     display: none;
+}
+
+li a {
+    text-decoration: none;
 }
 
 @media (min-width: 600px) {
