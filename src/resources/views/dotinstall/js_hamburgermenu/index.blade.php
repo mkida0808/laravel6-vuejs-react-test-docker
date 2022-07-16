@@ -36,6 +36,6 @@
         <p>こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。</p>
     </main>
 
-    <script src="{{ asset('js/dotinstall/js_hamburgermanu/main.js') }}"></script>
+    <script src="{{ asset('js/dotinstall/js_hamburgermenu/main.js') }}"></script>
 </body>
 </html>
