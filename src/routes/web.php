@@ -44,3 +44,8 @@ Route::get('/dotinstall/js_modalwindow', function () {
 Route::get('/dotinstall/js_hamburgermenu', function () {
     return view('dotinstall.js_hamburgermenu.index');
 });
+
+// CSS基本編
+Route::get('/dotinstall/css_basic', function () {
+    return view('dotinstall.css_basic.index');
+});
