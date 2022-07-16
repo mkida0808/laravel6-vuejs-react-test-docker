@@ -28,3 +28,23 @@
     width: 200px;
     height: 200px;
 }
+
+.box5 {
+    background-color: purple;
+    width: 200px;
+    height: 200px;
+    /* position: static; */
+    position: relative;
+}
+
+.rect {
+    width: 50px;
+    height: 20px;
+    background-color: lime;
+    /* 親box5がstaticであればブラウザ左上から */
+    /* position: absolute; */
+    /* 親box5がstaticであればブラウザ左上から */
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}

@@ -10,26 +10,9 @@
     <div class="box2">Box 2</div>
     <div class="box3">Box 3</div>
     <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-    <div class="box4">Box 4</div>
-
+    <div class="box5">
+        Box 5
+        <div class="rect"></div>
+    </div>
 </body>
 </html>
