@@ -1,17 +1,30 @@
 .box1 {
     background-color: orange;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 
 .box2 {
     background-color: skyblue;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+    /* position: static; */
+    position: relative; /* .box2の位置から */
+    top: 30px; /* 上から30px */
+    left: 30px; /* 左から30px */
 }
 
 .box3 {
     background-color: tomato;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+    position: fixed; /* ブラウザ左上から「box3が固定される前提」 */
+    top: 40px; /* 上から40px */
+    left: 60px; /* 左から60px */
+}
+
+.box4 {
+    background-color: green;
+    width: 200px;
+    height: 200px;
 }
