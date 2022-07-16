@@ -39,3 +39,8 @@ Route::get('/dotinstall/js_intersection_observer_api', function () {
 Route::get('/dotinstall/js_modalwindow', function () {
     return view('dotinstall.js_modalwindow.index');
 });
+
+// JSハンバーガーメニュー編
+Route::get('/dotinstall/js_hamburgermenu', function () {
+    return view('dotinstall.js_hamburgermenu.index');
+});
