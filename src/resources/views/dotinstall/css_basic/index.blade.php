@@ -14,5 +14,6 @@
         Box 5
         <div class="rect"></div>
     </div>
+    <div class="box6">Box 6</div>
 </body>
 </html>
