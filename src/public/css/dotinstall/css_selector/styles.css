@@ -1,3 +1,7 @@
-[target] {
+/* [target] { */ /* 属性セレクター /*
+/* [href="#top"] { */ /* 属性完全一致 */
+/* [href^="https"] { */ /* 属性前方一致 */
+/* [href$="dotinstall"] { */ /* 属性後方一致 */
+[href*="com"] {
     font-weight: bold;
 }
