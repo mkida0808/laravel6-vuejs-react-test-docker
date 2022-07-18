@@ -24,9 +24,9 @@ main h1 {
     color: orange;
 } */
 
-p + p {
+/* p + p {
     color: orange;
-}
+} */
 
 /* 疑似要素 */
 h1::before {
@@ -70,4 +70,26 @@ section > :first-child {
 
 section > :last-child {
     background-color: purple;
+}
+
+/* :nth-of-type擬似クラス */
+footer > h2:nth-of-type(2) {
+    color: red;
+}
+
+footer > h2:nth-of-type(even) {
+    background-color: pink;
+}
+
+footer > h2:nth-of-type(odd) {
+    background-color: skyblue;
+}
+
+footer > h2:first-of-type {
+    background-color: green;
+}
+
+
+footer > h2:last-of-type {
+    background-color: blue;
 }
