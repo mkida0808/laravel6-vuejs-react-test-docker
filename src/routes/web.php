@@ -54,3 +54,8 @@ Route::get('/dotinstall/css_basic', function () {
 Route::get('/dotinstall/css_selector', function () {
     return view('dotinstall.css_selector.index');
 });
+
+// JSアコーディオン編
+Route::get('/dotinstall/js_accordion', function () {
+    return view('dotinstall.js_accordion.index');
+});
