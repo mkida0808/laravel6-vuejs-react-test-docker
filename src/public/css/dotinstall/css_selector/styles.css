@@ -1,0 +1,100 @@
+/* [target] { */ /* 属性セレクター /*
+/* [href="#top"] { */ /* 属性完全一致 */
+/* [href^="https"] { */ /* 属性前方一致 */
+/* [href$="dotinstall"] { */ /* 属性後方一致 */
+[href*="com"] {
+    font-weight: bold;
+}
+
+/* セレクターの組み合わせ表記 */
+/*
+.info, p {
+    color: orange;
+} */
+/*
+h1.info {
+    color: orange;
+} */
+
+/* main > h1 {
+    color: orange;
+} */
+/*
+main h1 {
+    color: orange;
+} */
+
+/* p + p {
+    color: orange;
+} */
+
+/* 疑似要素 */
+h1::before {
+    content: '前 -';
+}
+
+h1::after {
+    /* content: '- 後'; */
+    content: attr(data-subtitle);
+}
+
+/* 疑似クラス */
+.btn {
+    width: 100px;
+    background: skyblue;
+    text-align: center;
+    padding: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+/* :nth-child擬似クラス */
+section > :nth-child(3n) {
+    background-color: pink;
+}
+
+section > :nth-child(even) {
+    background-color: skyblue;
+}
+
+section > :nth-child(odd) {
+    background-color: red;
+}
+
+section > :first-child {
+    background-color: green;
+}
+
+section > :last-child {
+    background-color: purple;
+}
+
+/* :nth-of-type擬似クラス */
+footer > h2:nth-of-type(2) {
+    color: red;
+}
+
+footer > h2:nth-of-type(even) {
+    background-color: pink;
+}
+
+footer > h2:nth-of-type(odd) {
+    background-color: skyblue;
+}
+
+footer > h2:first-of-type {
+    background-color: green;
+}
+
+
+footer > h2:last-of-type {
+    background-color: blue;
+}
+
+/* :empty, :not擬似クラス（半角スペース、改行ではemptyとして扱われない） */
+li:not(:empty) {
+    background-color: yellow;
+}
