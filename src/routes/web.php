@@ -49,3 +49,8 @@ Route::get('/dotinstall/js_hamburgermenu', function () {
 Route::get('/dotinstall/css_basic', function () {
     return view('dotinstall.css_basic.index');
 });
+
+// CSSセレクター編
+Route::get('/dotinstall/css_selector', function () {
+    return view('dotinstall.css_selector.index');
+});
