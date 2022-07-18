@@ -93,3 +93,8 @@ footer > h2:first-of-type {
 footer > h2:last-of-type {
     background-color: blue;
 }
+
+/* :empty, :not擬似クラス（半角スペース、改行ではemptyとして扱われない） */
+li:not(:empty) {
+    background-color: yellow;
+}

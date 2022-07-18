@@ -34,6 +34,16 @@
 
     <div class="btn">OK</div>
 
+    <ul>
+        <li>項目</li>
+        <li>項目</li>
+        <li></li>
+        <li> </li>
+        <li>
+            
+        </li>
+    </ul>
+
     <footer>
         <h1>h1見出し</h1>
         <p>pテキストテキストテキストテキストテキストテキスト</p>
