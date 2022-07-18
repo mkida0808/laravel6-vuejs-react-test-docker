@@ -51,3 +51,23 @@ h1::after {
 .btn:hover {
     opacity: 0.8;
 }
+/* :nth-child擬似クラス */
+section > :nth-child(3n) {
+    background-color: pink;
+}
+
+section > :nth-child(even) {
+    background-color: skyblue;
+}
+
+section > :nth-child(odd) {
+    background-color: red;
+}
+
+section > :first-child {
+    background-color: green;
+}
+
+section > :last-child {
+    background-color: purple;
+}
