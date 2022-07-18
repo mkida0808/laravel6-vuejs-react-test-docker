@@ -5,3 +5,25 @@
 [href*="com"] {
     font-weight: bold;
 }
+
+/* セレクターの組み合わせ表記 */
+/*
+.info, p {
+    color: orange;
+} */
+/*
+h1.info {
+    color: orange;
+} */
+
+/* main > h1 {
+    color: orange;
+} */
+/*
+main h1 {
+    color: orange;
+} */
+
+p + p {
+    color: orange;
+}

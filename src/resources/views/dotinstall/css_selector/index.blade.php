@@ -12,5 +12,18 @@
         <li><a href="https://facebook.com/dotinstall">Facebook</a></li>
         <li><a href="#top">TOP</a></li>
     </ul>
+
+    <main>
+        <h1 class="ttl info">main-h1: Title</h1>
+        <p>main-p: Hello, hello.</p>
+
+        <section>
+            <h1 class="ttl">section-h1: Title</h1>
+            <p>section-p: Hello, hello.</p>
+            <p>section-p: Hello, hello.</p>
+            <p>section-p: Hello, hello.</p>
+        </section>
+    </main>
+
 </body>
 </html>
