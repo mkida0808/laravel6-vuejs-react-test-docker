@@ -27,3 +27,13 @@ main h1 {
 p + p {
     color: orange;
 }
+
+/* 疑似要素 */
+h1::before {
+    content: '前 -';
+}
+
+h1::after {
+    /* content: '- 後'; */
+    content: attr(data-subtitle);
+}

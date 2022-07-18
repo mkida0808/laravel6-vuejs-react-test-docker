@@ -14,11 +14,11 @@
     </ul>
 
     <main>
-        <h1 class="ttl info">main-h1: Title</h1>
+        <h1 class="ttl info" data-subtitle="- main title">main-h1: Title</h1>
         <p>main-p: Hello, hello.</p>
 
         <section>
-            <h1 class="ttl">section-h1: Title</h1>
+            <h1 class="ttl" data-subtitle="- sub title">section-h1: Title</h1>
             <p>section-p: Hello, hello.</p>
             <p>section-p: Hello, hello.</p>
             <p>section-p: Hello, hello.</p>
