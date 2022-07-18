@@ -37,3 +37,17 @@ h1::after {
     /* content: '- 後'; */
     content: attr(data-subtitle);
 }
+
+/* 疑似クラス */
+.btn {
+    width: 100px;
+    background: skyblue;
+    text-align: center;
+    padding: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
