@@ -10,11 +10,11 @@
 
     <div class="container">
         <ul class="menu">
-            <li><a href="#">サイトの概要</a></li>
+            <li><a href="#" class="active">サイトの概要</a></li>
             <li><a href="#">サービス内容</a></li>
             <li><a href="#">お問い合わせ</a></li>
         </ul>
-        <section class="content">
+        <section class="content active">
             サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。
         </section>
         <section class="content">
