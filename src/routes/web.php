@@ -64,3 +64,8 @@ Route::get('/dotinstall/js_accordion', function () {
 Route::get('/dotinstall/js_tabmenu', function () {
     return view('dotinstall.js_tabmenu.index');
 });
+
+// JSカルーセル編
+Route::get('/dotinstall/js_carousel', function () {
+    return view('dotinstall.js_carousel.index');
+});
