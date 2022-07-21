@@ -59,3 +59,8 @@ Route::get('/dotinstall/css_selector', function () {
 Route::get('/dotinstall/js_accordion', function () {
     return view('dotinstall.js_accordion.index');
 });
+
+// JSタブメニュー編
+Route::get('/dotinstall/js_tabmenu', function () {
+    return view('dotinstall.js_tabmenu.index');
+});
