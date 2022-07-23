@@ -15,6 +15,9 @@
             <li><img src="{{ asset('img/dotinstall/js_carousel/b.png') }}"></li>
             <li><img src="{{ asset('img/dotinstall/js_carousel/c.png') }}"></li>
         </ul>
+
+        <button id="prev">&laquo;</button>
+        <button id="next">&raquo;</button>
     </div>
     <script src="{{ asset('js/dotinstall/js_carousel/main.js') }}"></script>
 </body>
