@@ -13,9 +13,13 @@
     <section class="carousel">
         <div class="container">
             <ul>
-                <li><img src="{{ asset('img/dotinstall/js_carousel/a.png') }}"></li>
+                {{-- <li><img src="{{ asset('img/dotinstall/js_carousel/a.png') }}"></li>
                 <li><img src="{{ asset('img/dotinstall/js_carousel/b.png') }}"></li>
-                <li><img src="{{ asset('img/dotinstall/js_carousel/c.png') }}"></li>
+                <li><img src="{{ asset('img/dotinstall/js_carousel/c.png') }}"></li> --}}
+                <li><img src="{{ asset('img/dotinstall/js_carousel/pic1.png') }}"></li>
+                <li><img src="{{ asset('img/dotinstall/js_carousel/pic2.png') }}"></li>
+                <li><img src="{{ asset('img/dotinstall/js_carousel/pic3.png') }}"></li>
+                <li><img src="{{ asset('img/dotinstall/js_carousel/pic4.png') }}"></li>
             </ul>
 
             <button id="prev">&laquo;</button>
