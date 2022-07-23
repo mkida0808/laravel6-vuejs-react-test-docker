@@ -23,9 +23,9 @@
         </div>
 
         <nav>
-            <button class="current"></button>
+            {{-- <button class="current"></button>
             <button></button>
-            <button></button>
+            <button></button> --}}
         </nav>
     </section>
     <script src="{{ asset('js/dotinstall/js_carousel/main.js') }}"></script>

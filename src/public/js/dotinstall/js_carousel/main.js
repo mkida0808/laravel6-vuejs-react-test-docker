@@ -15,20 +15,23 @@
         if (currentIndex === (slides.length - 1)) next.classList.add('hidden');
     }
 
+    function moveSlides() {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        // ul.style.transform = 'translateX(-200px)';
+        ul.style.transform = `translateX(${-1 * slideWidth * currentIndex}px)`;
+    }
+
     updateButtons();
 
     next.addEventListener('click', () => {
         currentIndex++;
         updateButtons();
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        // ul.style.transform = 'translateX(-200px)';
-        ul.style.transform = `translateX(${-1 * slideWidth * currentIndex}px)`;
+        moveSlides();
     });
 
     prev.addEventListener('click', () => {
         currentIndex--;
         updateButtons();
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        ul.style.transform = `translateX(${-1 * slideWidth * currentIndex}px)`;
+        moveSlides();
     });
 }
