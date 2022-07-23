@@ -23,6 +23,7 @@
         </div>
 
         <nav>
+            {{-- ボタンタグはJSで動的に生成する --}}
             {{-- <button class="current"></button>
             <button></button>
             <button></button> --}}
