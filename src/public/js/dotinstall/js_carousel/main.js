@@ -26,10 +26,23 @@
     function setupDots() {
         for (let i = 0; i < slides.length; i++) {
             const button = document.createElement('button');
+            button.addEventListener('click', () => {
+                currentIndex = i;
+                updateDots();
+                updateButtons();
+                moveSlides();
+            });
             dots.push(button);
             document.querySelector('nav').appendChild(button);
         }
         dots[0].classList.add('current');
+    }
+
+    function updateDots() {
+        dots.forEach(dot => {
+            dot.classList.remove('current');
+        });
+        dots[currentIndex].classList.add('current');
     }
 
     updateButtons();
@@ -37,12 +50,14 @@
 
     next.addEventListener('click', () => {
         currentIndex++;
+        updateDots();
         updateButtons();
         moveSlides();
     });
 
     prev.addEventListener('click', () => {
         currentIndex--;
+        updateDots();
         updateButtons();
         moveSlides();
     });
