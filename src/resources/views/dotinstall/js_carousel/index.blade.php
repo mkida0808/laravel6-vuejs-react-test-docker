@@ -9,16 +9,25 @@
 </head>
 <body>
     <h1>JSカルーセル編</h1>
-    <div class="container">
-        <ul>
-            <li><img src="{{ asset('img/dotinstall/js_carousel/a.png') }}"></li>
-            <li><img src="{{ asset('img/dotinstall/js_carousel/b.png') }}"></li>
-            <li><img src="{{ asset('img/dotinstall/js_carousel/c.png') }}"></li>
-        </ul>
 
-        <button id="prev">&laquo;</button>
-        <button id="next">&raquo;</button>
-    </div>
+    <section class="carousel">
+        <div class="container">
+            <ul>
+                <li><img src="{{ asset('img/dotinstall/js_carousel/a.png') }}"></li>
+                <li><img src="{{ asset('img/dotinstall/js_carousel/b.png') }}"></li>
+                <li><img src="{{ asset('img/dotinstall/js_carousel/c.png') }}"></li>
+            </ul>
+
+            <button id="prev">&laquo;</button>
+            <button id="next">&raquo;</button>
+        </div>
+
+        <nav>
+            <button class="current"></button>
+            <button></button>
+            <button></button>
+        </nav>
+    </section>
     <script src="{{ asset('js/dotinstall/js_carousel/main.js') }}"></script>
 </body>
 </html>
