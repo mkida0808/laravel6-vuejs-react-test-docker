@@ -11,8 +11,12 @@ body {
     animation-duration: 2s;
     animation-delay: 2s;
     animation-fill-mode: forwards;
-    animation-iteration-count: 3;
+    animation-iteration-count: 5;
     /* animation-iteration-count: infinite; */
+    /* animation-direction: alternate; */
+    /* animation-direction: reverse; */
+    /* animation-direction: alternate-reverse; */
+    animation-timing-function: linear;
 
     /* transition-property: border-radius; */
     /* transition-property: transform, background; */
