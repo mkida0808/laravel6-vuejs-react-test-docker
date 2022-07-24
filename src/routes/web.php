@@ -15,6 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// CSS基本編
+Route::get('/dotinstall/css_basic', function () {
+    return view('dotinstall.css_basic.index');
+});
+
+// CSSセレクター編
+Route::get('/dotinstall/css_selector', function () {
+    return view('dotinstall.css_selector.index');
+});
+
+// CSSアニメーション編
+Route::get('/dotinstall/css_animation', function () {
+    return view('dotinstall.css_animation.index');
+});
+
 // JS基本編
 Route::get('/dotinstall/js_basic', function () {
     return view('dotinstall.js_basic.index');
@@ -43,16 +58,6 @@ Route::get('/dotinstall/js_modalwindow', function () {
 // JSハンバーガーメニュー編
 Route::get('/dotinstall/js_hamburgermenu', function () {
     return view('dotinstall.js_hamburgermenu.index');
-});
-
-// CSS基本編
-Route::get('/dotinstall/css_basic', function () {
-    return view('dotinstall.css_basic.index');
-});
-
-// CSSセレクター編
-Route::get('/dotinstall/css_selector', function () {
-    return view('dotinstall.css_selector.index');
 });
 
 // JSアコーディオン編
