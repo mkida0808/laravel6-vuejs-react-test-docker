@@ -4,7 +4,7 @@ body {
 
 .box {
     /* margin-top: 150px; */
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     width: 250px;
     height: 250px;
     background: orange;
@@ -54,9 +54,13 @@ body {
 }
 
 .btn {
-    margin-top: 200px;
-    padding: 70px 140px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    /* padding: 70px 140px; */
     /* margin: 100px; */
+    width: 140px;
+    height: 70px;
+    vertical-align: center;
     background: hsl(200, 100%, 30%);
     color: #fff;
     font-size: 32px;
@@ -68,4 +72,24 @@ body {
 
 .btn:hover {
     background: hsl(200, 100%, 50%);
+}
+
+.loading {
+    width: 100px;
+    height: 100px;
+    border: 20px solid #ccc;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spin .8s infinite linear;
+}
+
+@keyframes spin {
+    /* 0% { */
+    from {
+        transform: none;
+    }
+    /* 100% { */
+    to {
+        transform: rotate(360deg);
+    }
 }
