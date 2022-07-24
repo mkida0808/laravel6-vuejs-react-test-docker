@@ -7,12 +7,15 @@ body {
     width: 250px;
     height: 250px;
     background: orange;
-    animation-name: move;
-    animation-duration: 2s;
-    animation-delay: 2s;
+    /* animation-name: move; */
+    /* animation-duration: 2s; */
+    /* animation-delay: 2s; */
     animation-fill-mode: forwards;
-    animation-iteration-count: 5;
+    /* animation-iteration-count: 5; */
     /* animation-iteration-count: infinite; */
+
+    animation: move 2s 5 1s;
+
     /* animation-direction: alternate; */
     /* animation-direction: reverse; */
     /* animation-direction: alternate-reverse; */
