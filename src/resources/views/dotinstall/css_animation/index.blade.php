@@ -9,6 +9,8 @@
     <h1>CSSアニメーション編</h1>
     <div class="box"></div>
 
+    <span class="btn">OK!</span>
+
     <script> </script>
 </body>
 </html>
