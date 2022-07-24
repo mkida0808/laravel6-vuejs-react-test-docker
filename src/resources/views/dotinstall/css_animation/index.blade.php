@@ -8,5 +8,7 @@
 <body>
     <h1>CSSアニメーション編</h1>
     <div class="box"></div>
+
+    <script> </script>
 </body>
 </html>
