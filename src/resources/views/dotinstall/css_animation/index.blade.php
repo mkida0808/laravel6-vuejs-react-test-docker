@@ -9,9 +9,12 @@
     <h1>CSSアニメーション編</h1>
     <div class="box"></div>
 
-    <div class="btn">OK!</div>
+    <div style="display: flex;">
+        <div class="btn">OK!</div>
+        <div class="loading"></div>
+    </div>
 
-    <div class="loading"></div>
+    <div class="message">HELLO!</div>
 
     <script> </script>
 </body>
