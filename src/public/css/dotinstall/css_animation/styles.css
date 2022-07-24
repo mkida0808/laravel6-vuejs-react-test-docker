@@ -8,7 +8,11 @@ body {
     height: 250px;
     background: orange;
     animation-name: move;
-    animation-duration: 1.5s;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 3;
+    /* animation-iteration-count: infinite; */
 
     /* transition-property: border-radius; */
     /* transition-property: transform, background; */
