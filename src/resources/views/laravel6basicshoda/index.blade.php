@@ -10,11 +10,11 @@
 <body>
     <h1>Blade/Index</h1>
 
-    @if ($msg !== '')
+    @isset ($msg)
         <p>こんにちは、{{ $msg }}さん！</p>
     @else
     <p>お名前を入力して下さい</p>
-    @endif
+    @endisset
 
     <form method="post" action="/laravel6basicshoda">
         @csrf

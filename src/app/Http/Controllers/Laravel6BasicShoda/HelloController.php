@@ -10,8 +10,7 @@ class HelloController extends Controller
 {
     public function index()
     {
-        $data = ['msg' => ''];
-        return view('laravel6basicshoda.index', $data);
+        return view('laravel6basicshoda.index');
     }
 
     public function post(Request $request)
