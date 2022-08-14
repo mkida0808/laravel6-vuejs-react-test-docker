@@ -10,14 +10,14 @@ class HelloController extends Controller
 {
     public function index()
     {
-        $data = ['msg' => 'お名前を入力して下さい'];
+        $data = ['msg' => ''];
         return view('laravel6basicshoda.index', $data);
     }
 
     public function post(Request $request)
     {
         // フォームから送信されたname属性（ここではmsg）はRequestクラスのインスタンスから取得出来る
-        $data = ['msg' => 'こんにちは、' . $request->msg . 'さん！'];
+        $data = ['msg' => $request->msg];
         return view('laravel6basicshoda.index', $data);
     }
 }
