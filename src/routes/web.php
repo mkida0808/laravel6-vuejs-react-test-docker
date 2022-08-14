@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// ********************* ドットインストール（ルーティング開始） *********************
 // CSS基本編
 Route::get('/dotinstall/css_basic', function () {
     return view('dotinstall.css_basic.index');
@@ -74,3 +75,10 @@ Route::get('/dotinstall/js_tabmenu', function () {
 Route::get('/dotinstall/js_carousel', function () {
     return view('dotinstall.js_carousel.index');
 });
+// ********************* ドットインストール（ルーティング終了） *********************
+
+
+// ********************* PHPフレームワークLaravel入門第2版（ルーティング開始） *********************
+Route::get('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@index');
+
+// ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
