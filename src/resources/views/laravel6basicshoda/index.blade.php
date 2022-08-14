@@ -8,5 +8,9 @@
 <body>
     <h1>Index</h1>
     <p>これは、Helloコントローラーのindexアクションです</p>
+    <ul>
+        <li>ID: {{ $id }}</li>
+        <li>PASS: {{ $pass }}</li>
+    </ul>
 </body>
 </html>
