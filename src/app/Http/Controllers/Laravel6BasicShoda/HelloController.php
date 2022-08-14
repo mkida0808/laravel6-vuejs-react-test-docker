@@ -9,8 +9,17 @@ use Illuminate\Http\Response;
 class HelloController extends Controller
 {
     //
-    public function index($id='noname', $pass='unknown', Request $request, Response $response)
+    public function index($id = 'noname', $pass = 'unknown', Request $request, Response $response)
     {
-        return view('laravel6basicshoda.index', compact('id', 'pass', 'request', 'response'));
+        return view(
+            'laravel6basicshoda.index',
+            [
+                'id' => $id,
+                'pass' => $pass,
+                'request' => $request,
+                'response' => $response,
+            ]
+        );
+        // return view('laravel6basicshoda.index', compact('id', 'pass', 'request', 'response'));
     }
 }
