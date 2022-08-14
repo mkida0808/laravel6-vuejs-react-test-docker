@@ -10,17 +10,23 @@
 <body>
     <h1>Blade/Index</h1>
 
-    @isset ($msg)
+    {{-- @isset ($msg)
         <p>こんにちは、{{ $msg }}さん！</p>
     @else
     <p>お名前を入力して下さい</p>
-    @endisset
+    @endisset --}}
 
-    <form method="post" action="/laravel6basicshoda">
+    {{-- <form method="post" action="/laravel6basicshoda">
         @csrf
         <input type="text" name="msg">
         <input type="submit">
-    </form>
+    </form> --}}
+
+    <ol>
+        @foreach ($data as $item)
+        <li>{{ $item }}</li>
+        @endforeach
+    </ol>
 </body>
 
 </html>
