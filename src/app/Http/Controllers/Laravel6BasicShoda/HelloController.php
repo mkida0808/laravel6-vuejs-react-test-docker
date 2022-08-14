@@ -14,7 +14,8 @@ class HelloController extends Controller
         return view(
             'laravel6basicshoda.index',
             [
-                'id' => $id,
+                // 'id' => $id,
+                'id' => $request->id, // クエリ文字列を使って渡ってきた値
                 'pass' => $pass,
                 'request' => $request,
                 'response' => $response,
