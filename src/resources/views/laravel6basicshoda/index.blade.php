@@ -11,6 +11,15 @@
     <ul>
         <li>ID: {{ $id }}</li>
         <li>PASS: {{ $pass }}</li>
+        <li>Request: <pre>{{ $request }}</pre></li>
+        <li>Response: <pre>{{ $response }}</pre></li>
+
+        <li>url: {{ $request->url() }}</li>
+        <li>fullUrl: {{ $request->fullUrl() }}</li>
+        <li>path: {{ $request->path() }}</li>
+
+        <li>status: {{ $response->status() }}</li>
+        <li>content: {{ $response->content() }}</li>
     </ul>
 </body>
 </html>
