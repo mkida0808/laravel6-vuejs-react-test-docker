@@ -10,7 +10,7 @@
 <body>
     <h1>Blade/Index</h1>
 
-    {{-- @isset ($msg)
+    {{-- @isset($msg)
         <p>こんにちは、{{ $msg }}さん！</p>
     @else
     <p>お名前を入力して下さい</p>
@@ -24,7 +24,15 @@
 
     <ol>
         @foreach ($data as $item)
-        <li>{{ $item }}</li>
+            @if ($loop->first)
+                <p>※データ一覧</p>
+                <ul>
+            @endif
+            <li>No.{{ $loop->iteration }} . {{ $item }}</li>
+            @if ($loop->last)
+                </ul>
+                <p>-----ここまで</p>
+            @endif
         @endforeach
     </ol>
 </body>
