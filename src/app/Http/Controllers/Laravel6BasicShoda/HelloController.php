@@ -4,23 +4,20 @@ namespace App\Http\Controllers\Laravel6BasicShoda;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+// use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
-    //
-    public function index($id = 'noname', $pass = 'unknown', Request $request, Response $response)
+    public function index()
     {
-        return view(
-            'laravel6basicshoda.index',
-            [
-                // 'id' => $id,
-                'id' => $request->id, // クエリ文字列を使って渡ってきた値
-                'pass' => $pass,
-                'request' => $request,
-                'response' => $response,
-            ]
-        );
-        // return view('laravel6basicshoda.index', compact('id', 'pass', 'request', 'response'));
+        $data = ['msg' => 'お名前を入力して下さい'];
+        return view('laravel6basicshoda.index', $data);
+    }
+
+    public function post(Request $request)
+    {
+        // フォームから送信されたname属性（ここではmsg）はRequestクラスのインスタンスから取得出来る
+        $data = ['msg' => 'こんにちは、' . $request->msg . 'さん！'];
+        return view('laravel6basicshoda.index', $data);
     }
 }

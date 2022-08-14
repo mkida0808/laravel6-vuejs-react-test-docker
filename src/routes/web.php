@@ -83,5 +83,6 @@ Route::get('/dotinstall/js_carousel', function () {
 // Route::get('/laravel6basicshoda/{id?}/{pass?}', 'Laravel6BasicShoda\HelloController@index');
 // クエリ文字列として値を取得する場合
 Route::get('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@index');
+Route::post('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@post');
 
 // ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
