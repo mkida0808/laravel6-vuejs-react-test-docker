@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Laravel6BasicShoda;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\Laravel6BasicShoda\Myrule;
 
 class HelloRequest extends FormRequest
 {
@@ -26,8 +27,7 @@ class HelloRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'email',
-            // 'age' => 'numeric|between:0, 150',
-            'age' => 'numeric|hello',
+            'age' => ['numeric', new Myrule(5)],
         ];
     }
 
