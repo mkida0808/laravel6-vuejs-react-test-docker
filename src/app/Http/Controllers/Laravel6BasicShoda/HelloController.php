@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 // use Illuminate\Http\Response;
 use App\Http\Requests\Laravel6BasicShoda\HelloRequest;
+use Validator;
 
 class HelloController extends Controller
 {
@@ -14,14 +15,19 @@ class HelloController extends Controller
         return view('laravel6basicshoda.index', ['msg' => 'フォーム入力：']);
     }
 
-    public function post(HelloRequest $request)
+    public function post(Request $request)
     {
-        // $validate_rule = [
-        //     'name' => 'required',
-        //     'email' => 'email',
-        //     'age' => 'numeric|between:0, 150'
-        // ];
-        // $this->validate($request, $validate_rule);
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'email',
+            'age' => 'numeric|between:0, 150'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/laravel6basicshoda')
+                ->withErrors($validator)
+                ->withInput();
+        }
 
         return view('laravel6basicshoda.index', ['msg' => '正しく入力されました']);
     }
