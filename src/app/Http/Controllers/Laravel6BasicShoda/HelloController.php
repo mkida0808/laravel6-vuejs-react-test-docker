@@ -10,6 +10,6 @@ class HelloController extends Controller
 {
     public function index(Request $request)
     {
-        return view('laravel6basicshoda.index', ['dataFromMiddleware' => $request->dataFromMiddleware]);
+        return view('laravel6basicshoda.index');
     }
 }
