@@ -12,23 +12,17 @@ class HelloController extends Controller
 {
     public function index(Request $request)
     {
-        return view('laravel6basicshoda.index', ['msg' => 'フォーム入力：']);
-    }
-
-    public function post(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'email',
-            'age' => 'numeric|between:0, 150'
+        $validator = Validator::make($request->query(), [
+            'id' => 'required',
+            'pass' => 'required',
         ]);
 
-        if ($validator->fails()) {
-            return redirect('/laravel6basicshoda')
-                ->withErrors($validator)
-                ->withInput();
-        }
-
-        return view('laravel6basicshoda.index', ['msg' => '正しく入力されました']);
+        $msg = $validator->fails() ? 'クエリーに問題があります。' : 'ID/PASSを受付けました。フォームを入力して下さい。';
+        return view('laravel6basicshoda.index', ['msg' => $msg]);
     }
+
+    // public function post(Request $request)
+    // {
+    //     return view('laravel6basicshoda.index', ['msg' => $msg]);
+    // }
 }
