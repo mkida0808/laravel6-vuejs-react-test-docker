@@ -10,6 +10,16 @@
 @section('content')
 <p>ここが本文のコンテンツです。</p>
 <p>必要なだけ記述できます。</p>
+
+@component('laravel6basicshoda.components.message')
+    @slot('msg_title')
+    CAUTION!
+    @endslot
+
+    @slot('msg_content')
+    これはメッセージです。
+    @endslot
+@endcomponent
 @endsection
 
 @section('footer')
