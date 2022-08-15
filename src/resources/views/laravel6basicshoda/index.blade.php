@@ -9,26 +9,14 @@
 
 @section('content')
     <p>ここが本文のコンテンツです。</p>
-    <ul>
-        @each ('laravel6basicshoda.components.item', $data, 'item')
-    </ul>
-
-    <p>必要なだけ記述できます。</p>
-
-    @include('laravel6basicshoda.components.message', [
-        'msg_title' => 'OK',
-        'msg_content' => 'サブビューです',
-    ])
-
-    {{-- @component('laravel6basicshoda.components.message')
-    @slot('msg_title')
-    CAUTION!
-    @endslot
-
-    @slot('msg_content')
-    これはメッセージです。
-    @endslot
-@endcomponent --}}
+    <table>
+        @foreach ($dataFromMiddleware as $item)
+            <tr>
+                <th>{{ $item['name'] }}</th>
+                <td>{{ $item['mail'] }}</td>
+            </tr>
+        @endforeach
+    </table>
 @endsection
 
 @section('footer')

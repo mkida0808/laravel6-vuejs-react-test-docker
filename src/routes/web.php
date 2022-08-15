@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\Laravel6BasicShoda\HelloMiddleware;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,9 +12,24 @@
 |
 */
 
+
+// ********************* PHPフレームワークLaravel入門第2版（ルーティング開始） *********************
+// ルートパラメータとして値を取得する場合
+// Route::get('/laravel6basicshoda/{id?}/{pass?}', 'Laravel6BasicShoda\HelloController@index');
+// クエリ文字列として値を取得する場合
+Route::get('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@index')
+    ->middleware(HelloMiddleware::class);
+// Route::post('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@post');
+
+// ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 // ********************* ドットインストール（ルーティング開始） *********************
 // CSS基本編
@@ -76,13 +92,3 @@ Route::get('/dotinstall/js_carousel', function () {
     return view('dotinstall.js_carousel.index');
 });
 // ********************* ドットインストール（ルーティング終了） *********************
-
-
-// ********************* PHPフレームワークLaravel入門第2版（ルーティング開始） *********************
-// ルートパラメータとして値を取得する場合
-// Route::get('/laravel6basicshoda/{id?}/{pass?}', 'Laravel6BasicShoda\HelloController@index');
-// クエリ文字列として値を取得する場合
-Route::get('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@index');
-// Route::post('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@post');
-
-// ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
