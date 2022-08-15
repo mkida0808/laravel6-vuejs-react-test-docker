@@ -23,34 +23,34 @@
     <form action="/laravel6basicshoda" method="post">
         <table>
             @csrf
-            @if ($errors->has('name'))
+            @error ('name')
             <tr>
                 <th>ERROR</th>
-                <td>{{ $errors->first('name') }}</td>
+                <td>{{ $message }}</td>
             </tr>
-            @endif
+            @enderror
             <tr>
                 <th>name: </th>
                 <td><input type="text" name="name" value="{{ old('name') }}"></>
             </tr>
 
-            @if ($errors->has('email'))
+            @error ('email')
             <tr>
                 <th>ERROR</th>
-                <td>{{ $errors->first('email') }}</td>
+                <td>{{ $message }}</td>
             </tr>
-            @endif
+            @enderror
             <tr>
                 <th>mail: </th>
                 <td><input type="text" name="email" value="{{ old('email') }}"></td>
             </tr>
 
-            @if ($errors->has('age'))
+            @error ('age')
             <tr>
                 <th>ERROR</th>
-                <td>{{ $errors->first('age') }}</td>
+                <td>{{ $message }}</td>
             </tr>
-            @endif
+            @enderror
             <tr>
                 <th>age: </th>
                 <td><input type="text" name="age" value="{{ old('age') }}"></td>
