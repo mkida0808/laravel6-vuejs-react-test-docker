@@ -12,43 +12,46 @@ class HelloController extends Controller
 {
     public function index(Request $request)
     {
-        $validator = Validator::make($request->query(), [
-            'id' => 'required',
-            'pass' => 'required',
-        ]);
+        // $validator = Validator::make($request->query(), [
+        //     'id' => 'required',
+        //     'pass' => 'required',
+        // ]);
 
-        $msg = $validator->fails() ? 'クエリーに問題があります。' : 'ID/PASSを受付けました。フォームを入力して下さい。';
-        return view('laravel6basicshoda.index', ['msg' => $msg]);
+        // $msg = $validator->fails() ? 'クエリーに問題があります。' : 'ID/PASSを受付けました。フォームを入力して下さい。';
+        // return view('laravel6basicshoda.index', ['msg' => $msg]);
+        return view('laravel6basicshoda.index', ['msg' => 'フォームを入力して下さい']);
     }
 
-    public function post(Request $request)
+    public function post(HelloRequest $request)
     {
-        $rules = [
-            'name' => 'required',
-            'email' => 'email',
-            'age' => 'numeric|between:0, 150',
-        ];
-        $messages = [
-            'name.required' => '名前は必ず入力して下さい',
-            'email.email' => 'メールアドレスが必要です',
-            'age.numeric' => '年齢を整数で記入して下さい',
-            'age.between' => '年齢は0〜150の間で入力して下さい',
-        ];
-        $validator = Validator::make($request->all(), $rules, $messages);
+        // $rules = [
+        //     'name' => 'required',
+        //     'email' => 'email',
+        //     'age' => 'numeric|between:0, 150',
+        // ];
+        // $messages = [
+        //     'name.required' => '名前は必ず入力して下さい',
+        //     'email.email' => 'メールアドレスが必要です',
+        //     'age.numeric' => '年齢を整数で記入して下さい',
+        //     'age.between' => '年齢は0〜150の間で入力して下さい',
+        // ];
+        // $validator = Validator::make($request->all(), $rules, $messages);
 
-        $validator->sometimes('age', 'min:0', function ($input) {
-            return !is_int($input->age);
-        });
+        // $validator->sometimes('age', 'min:0', function ($input) {
+        //     return !is_int($input->age);
+        // });
 
-        $validator->sometimes('age', 'max:200', function ($input) {
-            return !is_int($input->age);
-        });
+        // $validator->sometimes('age', 'max:200', function ($input) {
+        //     return !is_int($input->age);
+        // });
 
-        if ($validator->fails()) {
-            return redirect('/laravel6basicshoda')
-            ->withErrors($validator)
-            ->withInput();
-        }
-        return view('laravel6basicshoda.index', ['msg' => '正しく入力されました。']);
+        // if ($validator->fails()) {
+        //     return redirect('/laravel6basicshoda')
+        //     ->withErrors($validator)
+        //     ->withInput();
+        // }
+        // return view('laravel6basicshoda.index', ['msg' => '正しく入力されました。']);
+        return view('laravel6basicshoda.index', ['msg' => '正しく入力されました']);
+
     }
 }
