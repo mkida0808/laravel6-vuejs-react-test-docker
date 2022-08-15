@@ -43,9 +43,9 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
-        'hello' => [
-            \App\Http\Middleware\Laravel6BasicShoda\HelloMiddleware::class,
-        ],
+        // 'hello' => [
+        //     \App\Http\Middleware\Laravel6BasicShoda\HelloMiddleware::class,
+        // ],
     ];
 
     /**
