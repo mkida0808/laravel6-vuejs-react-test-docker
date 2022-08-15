@@ -18,7 +18,7 @@ use App\Http\Middleware\Laravel6BasicShoda\HelloMiddleware;
 // Route::get('/laravel6basicshoda/{id?}/{pass?}', 'Laravel6BasicShoda\HelloController@index');
 // クエリ文字列として値を取得する場合
 Route::get('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@index')
-    ->middleware(HelloMiddleware::class);
+    ->middleware('hello');
 // Route::post('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@post');
 
 // ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
