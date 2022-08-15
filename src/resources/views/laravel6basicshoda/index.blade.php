@@ -9,6 +9,10 @@
 
 @section('content')
     <p>ここが本文のコンテンツです。</p>
+    <ul>
+        @each ('laravel6basicshoda.components.item', $data, 'item')
+    </ul>
+
     <p>必要なだけ記述できます。</p>
 
     @include('laravel6basicshoda.components.message', [
