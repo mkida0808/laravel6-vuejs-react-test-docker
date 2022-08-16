@@ -15,11 +15,10 @@ class HelloController extends Controller
     {
         if (isset($request->id))
         {
-            $param = ['id' => $request->id];
-            $items = DB::select('SELECT * FROM people WHERE id = :id', $param);
+            $id = $request->id;
+            $items = DB::table('people')->where('id', $id)->orderBy('age', 'asc')->get();
         } else {
-            // $items = DB::select('SELECT * FROM people');
-            $items = DB::table('people')->get();
+            $items = DB::table('people')->orderBy('age', 'asc')->get();
         }
         return view('laravel6basicshoda.index', ['items' => $items]);
     }
