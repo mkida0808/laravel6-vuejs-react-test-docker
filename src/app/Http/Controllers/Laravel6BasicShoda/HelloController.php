@@ -41,7 +41,8 @@ class HelloController extends Controller
             'mail' => $request->mail,
             'age' => $request->age,
         ];
-        DB::insert('INSERT INTO people (name, mail, age) VALUES (:name, :mail, :age)', $param);
+        // DB::insert('INSERT INTO people (name, mail, age) VALUES (:name, :mail, :age)', $param);
+        DB::table('people')->insert($param);
         return redirect('/laravel6basicshoda');
     }
 
