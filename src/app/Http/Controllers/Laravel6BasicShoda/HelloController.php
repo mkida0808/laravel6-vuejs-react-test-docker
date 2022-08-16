@@ -48,20 +48,23 @@ class HelloController extends Controller
 
     public function edit(Request $request)
     {
-        $param = ['id' => $request->id];
-        $item = DB::select('SELECT * FROM people WHERE id = :id', $param);
-        return view('laravel6basicshoda.edit', ['form' => $item[0]]);
+        // $param = ['id' => $request->id];
+        // $item = DB::select('SELECT * FROM people WHERE id = :id', $param);
+        $item = DB::table('people')->where('id', $request->id)->first();
+        // return view('laravel6basicshoda.edit', ['form' => $item[0]]);
+        return view('laravel6basicshoda.edit', ['form' => $item]);
     }
 
     public function update(Request $request)
     {
         $param = [
-            'id' => $request->id,
+            // 'id' => $request->id,
             'name' => $request->name,
             'mail' => $request->mail,
             'age' => $request->age,
         ];
-        DB::update('UPDATE people SET name = :name, mail = :mail, age = :age WHERE id = :id', $param);
+        // DB::update('UPDATE people SET name = :name, mail = :mail, age = :age WHERE id = :id', $param);
+        DB::table('people')->where('id', $request->id)->update($param);
         return redirect('laravel6basicshoda');
     }
 
