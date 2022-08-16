@@ -21,6 +21,8 @@ Route::get('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@index');
 Route::post('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@post');
 Route::get('/laravel6basicshoda/add', 'Laravel6BasicShoda\HelloController@add');
 Route::post('/laravel6basicshoda/add', 'Laravel6BasicShoda\HelloController@create');
+Route::get('/laravel6basicshoda/edit', 'Laravel6BasicShoda\HelloController@edit');
+Route::post('/laravel6basicshoda/edit', 'Laravel6BasicShoda\HelloController@update');
 
 // ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
 

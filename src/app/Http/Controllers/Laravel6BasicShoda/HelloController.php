@@ -44,4 +44,23 @@ class HelloController extends Controller
         DB::insert('INSERT INTO people (name, mail, age) VALUES (:name, :mail, :age)', $param);
         return redirect('/laravel6basicshoda');
     }
+
+    public function edit(Request $request)
+    {
+        $param = ['id' => $request->id];
+        $item = DB::select('SELECT * FROM people WHERE id = :id', $param);
+        return view('laravel6basicshoda.edit', ['form' => $item[0]]);
+    }
+
+    public function update(Request $request)
+    {
+        $param = [
+            'id' => $request->id,
+            'name' => $request->name,
+            'mail' => $request->mail,
+            'age' => $request->age,
+        ];
+        DB::update('UPDATE people SET name = :name, mail = :mail, age = :age WHERE id = :id', $param);
+        return redirect('laravel6basicshoda');
+    }
 }
