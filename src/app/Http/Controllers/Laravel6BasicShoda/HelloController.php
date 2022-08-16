@@ -70,15 +70,17 @@ class HelloController extends Controller
 
     public function del(Request $request)
     {
-        $param = ['id' => $request->id];
-        $item = DB::select('SELECT * FROM people WHERE id = :id', $param);
-        return view('laravel6basicshoda.del', ['form' => $item[0]]);
+        // $param = ['id' => $request->id];
+        // $item = DB::select('SELECT * FROM people WHERE id = :id', $param);
+        $item = DB::table('people')->where('id', $request->id)->first();
+        return view('laravel6basicshoda.del', ['form' => $item]);
     }
 
     public function remove(Request $request)
     {
         $param = ['id' => $request->id];
-        DB::delete('DELETE FROM people WHERE id = :id', $param);
+        // DB::delete('DELETE FROM people WHERE id = :id', $param);
+        DB::table('people')->where('id', $request->id)->delete();
         return redirect('/laravel6basicshoda');
     }
 
