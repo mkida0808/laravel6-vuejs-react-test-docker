@@ -80,9 +80,8 @@ class HelloController extends Controller
 
     public function show(Request $request)
     {
-        $min = $request->min;
-        $max = $request->max;
-        $items = DB::table('people')->whereRaw('age >= ? and age <= ?', [$min, $max])->get();
+        $page = $request->page;
+        $items = DB::table('people')->offset($page * 3)->limit(3)->get();
 
         return view('laravel6basicshoda.show', ['items' => $items]);
     }
