@@ -19,6 +19,8 @@
 // クエリ文字列として値を取得する場合
 Route::get('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@index');
 Route::post('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@post');
+Route::get('/laravel6basicshoda/add', 'Laravel6BasicShoda\HelloController@add');
+Route::post('/laravel6basicshoda/add', 'Laravel6BasicShoda\HelloController@create');
 
 // ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
 
