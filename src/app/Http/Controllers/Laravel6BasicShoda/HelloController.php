@@ -5,61 +5,77 @@ namespace App\Http\Controllers\Laravel6BasicShoda;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 // use Illuminate\Http\Response;
-use App\Http\Requests\Laravel6BasicShoda\HelloRequest;
-use Validator;
+// use App\Http\Requests\Laravel6BasicShoda\HelloRequest;
+// use Validator;
+use Illuminate\Support\Facades\DB;
 
 class HelloController extends Controller
 {
     public function index(Request $request)
     {
-        $msg = $request->hasCookie('msg') ? 'Cookie: ' . $request->cookie('msg') : '※Cookieはありません';
-        return view('laravel6basicshoda.index', ['msg' => $msg]);
-
-        // $validator = Validator::make($request->query(), [
-        //     'id' => 'required',
-        //     'pass' => 'required',
-        // ]);
-        // $msg = $validator->fails() ? 'クエリーに問題があります。' : 'ID/PASSを受付けました。フォームを入力して下さい。';
-        // return view('laravel6basicshoda.index', ['msg' => $msg]);
+        if (isset($request->id))
+        {
+            $items = DB::table('people')->where('id', $request->id)->orderBy('age', 'asc')->get();
+        } else {
+            $items = DB::table('people')->orderBy('age', 'asc')->get();
+        }
+        return view('laravel6basicshoda.index', ['items' => $items]);
     }
 
     public function post(Request $request)
     {
-        $validate_rule = [
-            'msg' => 'required',
+        $items = DB::table('people')->get();
+        return view('laravel6basicshoda.index', ['items' => $items]);
+    }
+
+    public function add(Request $request)
+    {
+        return view('laravel6basicshoda.add');
+    }
+
+    public function create(Request $request)
+    {
+        $param = [
+            'name' => $request->name,
+            'mail' => $request->mail,
+            'age' => $request->age,
         ];
-        $this->validate($request, $validate_rule);
-        $msg = $request->msg;
-        $response = response()->view('laravel6basicshoda.index', ['msg' => '[' . $msg . ']をクッキーに保存しました']);
-        $response->cookie('msg', $msg, 100);
-        return $response;
+        DB::table('people')->insert($param);
+        return redirect('/laravel6basicshoda');
+    }
 
-        // $rules = [
-        //     'name' => 'required',
-        //     'email' => 'email',
-        //     'age' => 'numeric|between:0, 150',
-        // ];
-        // $messages = [
-        //     'name.required' => '名前は必ず入力して下さい',
-        //     'email.email' => 'メールアドレスが必要です',
-        //     'age.numeric' => '年齢を整数で記入して下さい',
-        //     'age.between' => '年齢は0〜150の間で入力して下さい',
-        // ];
-        // $validator = Validator::make($request->all(), $rules, $messages);
+    public function edit(Request $request)
+    {
+        $item = DB::table('people')->where('id', $request->id)->first();
+        return view('laravel6basicshoda.edit', ['form' => $item]);
+    }
 
-        // $validator->sometimes('age', 'min:0', function ($input) {
-        //     return !is_int($input->age);
-        // });
+    public function update(Request $request)
+    {
+        $param = [
+            'name' => $request->name,
+            'mail' => $request->mail,
+            'age' => $request->age,
+        ];
+        DB::table('people')->where('id', $request->id)->update($param);
+        return redirect('laravel6basicshoda');
+    }
 
-        // $validator->sometimes('age', 'max:200', function ($input) {
-        //     return !is_int($input->age);
-        // });
+    public function del(Request $request)
+    {
+        $item = DB::table('people')->where('id', $request->id)->first();
+        return view('laravel6basicshoda.del', ['form' => $item]);
+    }
 
-        // if ($validator->fails()) {
-        //     return redirect('/laravel6basicshoda')
-        //     ->withErrors($validator)
-        //     ->withInput();
-        // }
-        // return view('laravel6basicshoda.index', ['msg' => '正しく入力されました。']);
+    public function remove(Request $request)
+    {
+        DB::table('people')->where('id', $request->id)->delete();
+        return redirect('/laravel6basicshoda');
+    }
+
+    public function show(Request $request)
+    {
+        $items = DB::table('people')->offset($request->page * 3)->limit(3)->get();
+        return view('laravel6basicshoda.show', ['items' => $items]);
     }
 }
