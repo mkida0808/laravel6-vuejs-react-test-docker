@@ -8,27 +8,57 @@
 @endsection
 
 @section('content')
-    <p>ここが本文のコンテンツです。</p>
-    <ul>
-        @each ('laravel6basicshoda.components.item', $data, 'item')
-    </ul>
+    <p>{{ $msg }}</p>
+    {{-- $errorsはバリデーション時に発生したエラー内容のオブジェクトが格納されている --}}
+    @if (count($errors) > 0)
+    <p>入力に問題があります。再入力して下さい。</p>
+    {{-- <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div> --}}
+    @endif
+    <form action="/laravel6basicshoda" method="post">
+        <table>
+            @csrf
+            @error ('msg')
+            <tr>
+                <th>ERROR</th>
+                <td>{{ $message }}</td>
+            </tr>
+            @enderror
+            <tr>
+                <th>Message: </th>
+                <td><input type="text" name="msg" value="{{ old('msg') }}"></>
+            </tr>
 
-    <p>必要なだけ記述できます。</p>
+            {{-- @error ('email')
+            <tr>
+                <th>ERROR</th>
+                <td>{{ $message }}</td>
+            </tr>
+            @enderror
+            <tr>
+                <th>mail: </th>
+                <td><input type="text" name="email" value="{{ old('email') }}"></td>
+            </tr>
 
-    @include('laravel6basicshoda.components.message', [
-        'msg_title' => 'OK',
-        'msg_content' => 'サブビューです',
-    ])
+            @error ('age')
+            <tr>
+                <th>ERROR</th>
+                <td>{{ $message }}</td>
+            </tr>
+            @enderror
+            <tr>
+                <th>age: </th>
+                <td><input type="text" name="age" value="{{ old('age') }}"></td>
+            </tr> --}}
 
-    {{-- @component('laravel6basicshoda.components.message')
-    @slot('msg_title')
-    CAUTION!
-    @endslot
-
-    @slot('msg_content')
-    これはメッセージです。
-    @endslot
-@endcomponent --}}
+            <tr><th></th><td><input type="submit" value="send"></td></tr>
+        </table>
+    </form>
 @endsection
 
 @section('footer')
