@@ -18,7 +18,8 @@ class HelloController extends Controller
             $param = ['id' => $request->id];
             $items = DB::select('SELECT * FROM people WHERE id = :id', $param);
         } else {
-            $items = DB::select('SELECT * FROM people');
+            // $items = DB::select('SELECT * FROM people');
+            $items = DB::table('people')->get();
         }
         return view('laravel6basicshoda.index', ['items' => $items]);
     }
