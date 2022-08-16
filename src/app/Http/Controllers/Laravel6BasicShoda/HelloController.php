@@ -81,14 +81,10 @@ class HelloController extends Controller
 
     public function show(Request $request)
     {
-        // $id = $request->id;
-        $name = $request->name;
-        // $items = DB::table('people')->where('id', '<', $id)->get();
-        $items = DB::table('people')
-        ->where('name', 'like', '%' . $name . '%')
-        ->orWhere('mail', 'like', '%' . $name . '%')
-        ->get();
-        
+        $min = $request->min;
+        $max = $request->max;
+        $items = DB::table('people')->whereRaw('age >= ? and age <= ?', [$min, $max])->get();
+
         return view('laravel6basicshoda.show', ['items' => $items]);
     }
 }
