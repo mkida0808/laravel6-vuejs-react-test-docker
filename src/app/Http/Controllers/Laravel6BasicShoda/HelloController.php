@@ -78,4 +78,11 @@ class HelloController extends Controller
         DB::delete('DELETE FROM people WHERE id = :id', $param);
         return redirect('/laravel6basicshoda');
     }
+
+    public function show(Request $request)
+    {
+        $id = $request->id;
+        $items = DB::table('people')->where('id', '<', $id)->get();
+        return view('laravel6basicshoda.show', ['items' => $items]);
+    }
 }
