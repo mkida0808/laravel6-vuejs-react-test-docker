@@ -10,8 +10,11 @@ class PersonController extends Controller
 {
     public function index()
     {
-        $items = Person::all();
-        return view('laravel6basicshoda.person.index', ['items' => $items]);
+        // $items = Person::all();
+        $hasItems = Person::has('boards')->get();
+        $noItems = Person::doesntHave('boards')->get();
+        $param = ['hasItems' => $hasItems, 'noItems' => $noItems];
+        return view('laravel6basicshoda.person.index', $param);
     }
 
     public function find()
