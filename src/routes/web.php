@@ -27,6 +27,8 @@ Route::get('/laravel6basicshoda/del', 'Laravel6BasicShoda\HelloController@del');
 Route::post('/laravel6basicshoda/del', 'Laravel6BasicShoda\HelloController@remove');
 Route::get('/laravel6basicshoda/show', 'Laravel6BasicShoda\HelloController@show');
 
+Route::get('/laravel6basicshoda/person', 'Laravel6BasicShoda\PersonController@index');
+
 // ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
 
 
