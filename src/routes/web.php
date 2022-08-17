@@ -37,6 +37,11 @@ Route::post('/laravel6basicshoda/person/edit', 'Laravel6BasicShoda\PersonControl
 Route::get('/laravel6basicshoda/person/del', 'Laravel6BasicShoda\PersonController@delete');
 Route::post('/laravel6basicshoda/person/del', 'Laravel6BasicShoda\PersonController@remove');
 
+Route::get('/laravel6basicshoda/board', 'Laravel6BasicShoda\BoardController@index');
+Route::get('/laravel6basicshoda/board/add', 'Laravel6BasicShoda\BoardController@add');
+Route::post('/laravel6basicshoda/board/add', 'Laravel6BasicShoda\BoardController@create');
+
+
 
 // ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
 
