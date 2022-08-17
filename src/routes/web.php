@@ -27,6 +27,22 @@ Route::get('/laravel6basicshoda/del', 'Laravel6BasicShoda\HelloController@del');
 Route::post('/laravel6basicshoda/del', 'Laravel6BasicShoda\HelloController@remove');
 Route::get('/laravel6basicshoda/show', 'Laravel6BasicShoda\HelloController@show');
 
+Route::get('/laravel6basicshoda/person', 'Laravel6BasicShoda\PersonController@index');
+Route::get('/laravel6basicshoda/person/find', 'Laravel6BasicShoda\PersonController@find');
+Route::post('/laravel6basicshoda/person/find', 'Laravel6BasicShoda\PersonController@search');
+Route::get('/laravel6basicshoda/person/add', 'Laravel6BasicShoda\PersonController@add');
+Route::post('/laravel6basicshoda/person/add', 'Laravel6BasicShoda\PersonController@create');
+Route::get('/laravel6basicshoda/person/edit', 'Laravel6BasicShoda\PersonController@edit');
+Route::post('/laravel6basicshoda/person/edit', 'Laravel6BasicShoda\PersonController@update');
+Route::get('/laravel6basicshoda/person/del', 'Laravel6BasicShoda\PersonController@delete');
+Route::post('/laravel6basicshoda/person/del', 'Laravel6BasicShoda\PersonController@remove');
+
+Route::get('/laravel6basicshoda/board', 'Laravel6BasicShoda\BoardController@index');
+Route::get('/laravel6basicshoda/board/add', 'Laravel6BasicShoda\BoardController@add');
+Route::post('/laravel6basicshoda/board/add', 'Laravel6BasicShoda\BoardController@create');
+
+
+
 // ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
 
 
