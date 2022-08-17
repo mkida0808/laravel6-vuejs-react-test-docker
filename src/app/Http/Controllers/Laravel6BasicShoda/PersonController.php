@@ -51,4 +51,21 @@ class PersonController extends Controller
 
         return redirect('/laravel6basicshoda/person');
     }
+
+    public function edit(Request $request)
+    {
+        $person = Person::find($request->id);
+        return view('laravel6basicshoda.person.edit', ['form' => $person]);
+    }
+
+    public function update(Request $request)
+    {
+        $this->validate($request, Person::$rules);
+        $person = Person::find($request->id);
+        $form = $request->all();
+        unset($form['_token']);
+        $person->fill($form)->save();
+
+        return redirect('/laravel6basicshoda/person');
+    }
 }

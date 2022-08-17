@@ -32,6 +32,8 @@ Route::get('/laravel6basicshoda/person/find', 'Laravel6BasicShoda\PersonControll
 Route::post('/laravel6basicshoda/person/find', 'Laravel6BasicShoda\PersonController@search');
 Route::get('/laravel6basicshoda/person/add', 'Laravel6BasicShoda\PersonController@add');
 Route::post('/laravel6basicshoda/person/add', 'Laravel6BasicShoda\PersonController@create');
+Route::get('/laravel6basicshoda/person/edit', 'Laravel6BasicShoda\PersonController@edit');
+Route::post('/laravel6basicshoda/person/edit', 'Laravel6BasicShoda\PersonController@update');
 
 
 // ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
