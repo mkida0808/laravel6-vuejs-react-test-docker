@@ -10,7 +10,10 @@ class BoardController extends Controller
 {
     public function index()
     {
-        $items = Board::all();
+        // $items = Board::all();
+
+        // withメソッドによるEagerローディング
+        $items = Board::with('person')->get();
         return view('laravel6basicshoda.board.index', ['items' => $items]);
     }
 
