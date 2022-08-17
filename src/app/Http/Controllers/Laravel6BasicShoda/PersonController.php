@@ -32,4 +32,23 @@ class PersonController extends Controller
         $param = ['input' => $request->input, 'item' => $item];
         return view('laravel6basicshoda.person.find', $param);
     }
+
+    public function add()
+    {
+        return view('laravel6basicshoda.person.add');
+    }
+
+    public function create(Request $request)
+    {
+        $this->validate($request, Person::$rules);
+        $person = new Person;
+        $form = $request->all();
+        unset($form['_token']);
+        $person->fill($form)->save();
+        // $person->name = $request->name;
+        // $person->mail = $request->mail;
+        // $person->age = $request->age;
+
+        return redirect('/laravel6basicshoda/person');
+    }
 }
