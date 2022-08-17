@@ -4,6 +4,7 @@ namespace App\Models\Laravel6BasicShoda;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use App\Scopes\Laravel6BasicShoda\ScopePerson;
 
 class Person extends Model
 {
@@ -30,9 +31,10 @@ class Person extends Model
     protected static function boot()
     {
         parent::boot();
+        static::addGlobalScope(new ScopePerson);
 
-        static::addGlobalScope('age', function (Builder $builder) {
-            $builder->where('age', '>', 20);
-        });
+        // static::addGlobalScope('age', function (Builder $builder) {
+        //     $builder->where('age', '>', 20);
+        // });
     }
 }
