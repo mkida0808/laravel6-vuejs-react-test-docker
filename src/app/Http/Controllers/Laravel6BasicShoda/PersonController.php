@@ -8,7 +8,7 @@ use App\Models\Laravel6BasicShoda\Person;
 
 class PersonController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $items = Person::all();
         return view('laravel6basicshoda.person.index', ['items' => $items]);
