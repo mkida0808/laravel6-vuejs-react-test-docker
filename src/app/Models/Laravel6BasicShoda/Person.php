@@ -36,6 +36,13 @@ class Person extends Model
         return $query->where('age', '<=', $n);
     }
 
+    // public function board()
+    public function boards()
+    {
+        // return $this->hasOne('App\Models\Laravel6BasicShoda\Board');
+        return $this->hasMany('App\Models\Laravel6BasicShoda\Board');
+    }
+
     // protected static function boot()
     // {
     //     parent::boot();
