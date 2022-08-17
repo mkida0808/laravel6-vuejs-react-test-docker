@@ -13,4 +13,16 @@ class PersonController extends Controller
         $items = Person::all();
         return view('laravel6basicshoda.person.index', ['items' => $items]);
     }
+
+    public function find()
+    {
+        return view('laravel6basicshoda.person.find', ['input' => '']);
+    }
+
+    public function search(Request $request)
+    {
+        $item = Person::find($request->input);
+        $param = ['input' => $request->input, 'item' => $item];
+        return view('laravel6basicshoda.person.find', $param);
+    }
 }
