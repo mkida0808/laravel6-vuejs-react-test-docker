@@ -17,7 +17,7 @@
 // ルートパラメータとして値を取得する場合
 // Route::get('/laravel6basicshoda/{id?}/{pass?}', 'Laravel6BasicShoda\HelloController@index');
 // クエリ文字列として値を取得する場合
-Route::get('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@index');
+Route::get('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@index')->middleware('auth');
 Route::post('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@post');
 Route::get('/laravel6basicshoda/add', 'Laravel6BasicShoda\HelloController@add');
 Route::post('/laravel6basicshoda/add', 'Laravel6BasicShoda\HelloController@create');
