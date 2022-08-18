@@ -15,7 +15,8 @@ class RestdataController extends Controller
      */
     public function index()
     {
-        //
+        $items = Restdata::all();
+        return $items->toArray();
     }
 
     /**
@@ -47,7 +48,8 @@ class RestdataController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = Restdata::find($id);
+        return $item->toArray();
     }
 
     /**
