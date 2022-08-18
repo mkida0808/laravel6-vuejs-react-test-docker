@@ -83,4 +83,17 @@ class HelloController extends Controller
     {
         return view('laravel6basicshoda.rest');
     }
+
+    public function ses_get(Request $request)
+    {
+        $sesdata = $request->session()->get('msg');
+        return view('laravel6basicshoda.session', ['session_data' => $sesdata]);
+    }
+
+    public function ses_put(Request $request)
+    {
+        $msg = $request->input;
+        $request->session()->put('msg', $msg);
+        return redirect('/laravel6basicshoda/session');
+    }
 }
