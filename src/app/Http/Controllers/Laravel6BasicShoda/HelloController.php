@@ -78,4 +78,9 @@ class HelloController extends Controller
         $items = DB::table('people')->offset($request->page * 3)->limit(3)->get();
         return view('laravel6basicshoda.show', ['items' => $items]);
     }
+
+    public function rest(Request $request)
+    {
+        return view('laravel6basicshoda.rest');
+    }
 }

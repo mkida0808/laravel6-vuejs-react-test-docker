@@ -27,6 +27,7 @@ Route::get('/laravel6basicshoda/del', 'Laravel6BasicShoda\HelloController@del');
 Route::post('/laravel6basicshoda/del', 'Laravel6BasicShoda\HelloController@remove');
 Route::get('/laravel6basicshoda/show', 'Laravel6BasicShoda\HelloController@show');
 
+
 Route::get('/laravel6basicshoda/person', 'Laravel6BasicShoda\PersonController@index');
 Route::get('/laravel6basicshoda/person/find', 'Laravel6BasicShoda\PersonController@find');
 Route::post('/laravel6basicshoda/person/find', 'Laravel6BasicShoda\PersonController@search');
@@ -42,6 +43,7 @@ Route::get('/laravel6basicshoda/board/add', 'Laravel6BasicShoda\BoardController@
 Route::post('/laravel6basicshoda/board/add', 'Laravel6BasicShoda\BoardController@create');
 
 Route::resource('/laravel6basicshoda/rest', 'Laravel6BasicShoda\RestdataController');
+Route::get('/laravel6basicshoda/rest', 'Laravel6BasicShoda\HelloController@rest');
 
 // ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
 
