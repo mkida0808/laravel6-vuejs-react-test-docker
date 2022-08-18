@@ -15,7 +15,8 @@ class HelloController extends Controller
     public function index(Request $request)
     {
         $sort = $request->sort;
-        $items = Person::orderBy($sort, 'asc')->simplePaginate(5);
+        // $items = Person::orderBy($sort, 'asc')->simplePaginate(5);
+        $items = Person::orderBy($sort, 'asc')->paginate(5);
         $param = ['items' => $items, 'sort' => $sort];
         return view('laravel6basicshoda.index', $param);
 
