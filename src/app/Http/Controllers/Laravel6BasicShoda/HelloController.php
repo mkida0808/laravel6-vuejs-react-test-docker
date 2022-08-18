@@ -96,4 +96,20 @@ class HelloController extends Controller
         $request->session()->put('msg', $msg);
         return redirect('/laravel6basicshoda/session');
     }
+
+    public function getAuth(Request $request)
+    {
+        return view('laravel6basicshoda.auth', ['message' => 'ログインして下さい']);
+    }
+
+    public function postAuth(Request $request)
+    {
+        $auth = ['email' => $request->email, 'password' => $request->password];
+        if (Auth::attempt($auth)) {
+            $message = 'ログインしました。（' . Auth::user()->name . '）';
+        } else {
+            $message = 'ログインに失敗しました。';
+        }
+        return view('laravel6basicshoda.auth', ['message' => $message]);
+    }
 }

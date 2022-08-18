@@ -48,6 +48,11 @@ Route::get('/laravel6basicshoda/rest', 'Laravel6BasicShoda\HelloController@rest'
 Route::get('/laravel6basicshoda/session', 'Laravel6BasicShoda\HelloController@ses_get');
 Route::post('/laravel6basicshoda/session', 'Laravel6BasicShoda\HelloController@ses_put');
 
+Route::get('/laravel6basicshoda/auth', 'Laravel6BasicShoda\HelloController@getAuth');
+Route::post('/laravel6basicshoda/auth', 'Laravel6BasicShoda\HelloController@postAuth');
+
+
+
 // ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
 
 
