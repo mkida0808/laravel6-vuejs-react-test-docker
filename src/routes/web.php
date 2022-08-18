@@ -41,7 +41,7 @@ Route::get('/laravel6basicshoda/board', 'Laravel6BasicShoda\BoardController@inde
 Route::get('/laravel6basicshoda/board/add', 'Laravel6BasicShoda\BoardController@add');
 Route::post('/laravel6basicshoda/board/add', 'Laravel6BasicShoda\BoardController@create');
 
-
+Route::resource('/laravel6basicshoda/rest', 'Laravel6BasicShoda\RestdataController');
 
 // ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
 
