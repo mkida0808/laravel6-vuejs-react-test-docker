@@ -10,10 +10,10 @@
 @section('content')
     <table>
         <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Mail</th>
-            <th>Age</th>
+            <th><a href="/laravel6basicshoda?sort=id">Id</a></th>
+            <th><a href="/laravel6basicshoda?sort=name">Name</a></th>
+            <th><a href="/laravel6basicshoda?sort=mail">Mail</a></th>
+            <th><a href="/laravel6basicshoda?sort=age">Age</a></th>
         </tr>
         @foreach ($items as $item)
             <tr>
@@ -24,7 +24,7 @@
             </tr>
         @endforeach
     </table>
-    {{ $items->links() }}
+    {{ $items->appends(['sort' => $sort])->links() }}
 @endsection
 
 @section('footer')
