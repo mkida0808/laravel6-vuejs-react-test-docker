@@ -119,3 +119,7 @@ Route::get('/dotinstall/js_carousel', function () {
     return view('dotinstall.js_carousel.index');
 });
 // ********************* ドットインストール（ルーティング終了） *********************
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
