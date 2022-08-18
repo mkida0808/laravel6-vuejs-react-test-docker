@@ -8,6 +8,11 @@
 @endsection
 
 @section('content')
+    @if (Auth::check())
+        <p>User: {{ $user->name . '(' . $user->email . ')' }}</p>
+    @else
+    <p>※ログインしていません。（<a href="/login">ログイン</a>｜（<a href="/register">登録</a>）</p>
+    @endif
     <table>
         <tr>
             <th><a href="/laravel6basicshoda?sort=id">Id</a></th>

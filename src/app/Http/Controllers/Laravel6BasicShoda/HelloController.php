@@ -9,26 +9,17 @@ use Illuminate\Http\Request;
 // use Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\Laravel6BasicShoda\Person;
+use Illuminate\Support\Facades\Auth;
 
 class HelloController extends Controller
 {
     public function index(Request $request)
     {
+        $user = Auth::user();
         $sort = $request->sort;
-        // $items = Person::orderBy($sort, 'asc')->simplePaginate(5);
-        $items = Person::orderBy($sort, 'asc')->paginate(5);
-        $param = ['items' => $items, 'sort' => $sort];
+        $items = DB::table('people')->orderBy('id', 'asc')->paginate(5);
+        $param = ['items' => $items, 'sort' => $sort, 'user' => $user];
         return view('laravel6basicshoda.index', $param);
-
-        // $items = DB::table('people')->orderBy('age', 'asc')->simplePaginate(5);
-
-        // if (isset($request->id))
-        // {
-        //     $items = DB::table('people')->where('id', $request->id)->orderBy('age', 'asc')->get();
-        // } else {
-        //     $items = DB::table('people')->orderBy('age', 'asc')->get();
-        // }
-        // return view('laravel6basicshoda.index', ['items' => $items]);
     }
 
     public function post(Request $request)
