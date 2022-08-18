@@ -26,7 +26,7 @@ class RestdataController extends Controller
      */
     public function create()
     {
-        //
+        return view('laravel6basicshoda.rest.create');
     }
 
     /**
@@ -37,7 +37,11 @@ class RestdataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $restdata = new Restdata;
+        $form = $request->all();
+        unset($form['_token']);
+        $restdata->fill($form)->save();
+        return redirect('/laravel6basicshoda/rest');
     }
 
     /**
