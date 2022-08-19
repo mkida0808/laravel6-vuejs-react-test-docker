@@ -17,7 +17,7 @@
 // ルートパラメータとして値を取得する場合
 // Route::get('/laravel6basicshoda/{id?}/{pass?}', 'Laravel6BasicShoda\HelloController@index');
 // クエリ文字列として値を取得する場合
-Route::get('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@index');
+Route::get('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@index')->middleware('auth');
 Route::post('/laravel6basicshoda', 'Laravel6BasicShoda\HelloController@post');
 Route::get('/laravel6basicshoda/add', 'Laravel6BasicShoda\HelloController@add');
 Route::post('/laravel6basicshoda/add', 'Laravel6BasicShoda\HelloController@create');
@@ -26,6 +26,7 @@ Route::post('/laravel6basicshoda/edit', 'Laravel6BasicShoda\HelloController@upda
 Route::get('/laravel6basicshoda/del', 'Laravel6BasicShoda\HelloController@del');
 Route::post('/laravel6basicshoda/del', 'Laravel6BasicShoda\HelloController@remove');
 Route::get('/laravel6basicshoda/show', 'Laravel6BasicShoda\HelloController@show');
+
 
 Route::get('/laravel6basicshoda/person', 'Laravel6BasicShoda\PersonController@index');
 Route::get('/laravel6basicshoda/person/find', 'Laravel6BasicShoda\PersonController@find');
@@ -40,6 +41,15 @@ Route::post('/laravel6basicshoda/person/del', 'Laravel6BasicShoda\PersonControll
 Route::get('/laravel6basicshoda/board', 'Laravel6BasicShoda\BoardController@index');
 Route::get('/laravel6basicshoda/board/add', 'Laravel6BasicShoda\BoardController@add');
 Route::post('/laravel6basicshoda/board/add', 'Laravel6BasicShoda\BoardController@create');
+
+Route::resource('/laravel6basicshoda/rest', 'Laravel6BasicShoda\RestdataController');
+Route::get('/laravel6basicshoda/rest', 'Laravel6BasicShoda\HelloController@rest');
+
+Route::get('/laravel6basicshoda/session', 'Laravel6BasicShoda\HelloController@ses_get');
+Route::post('/laravel6basicshoda/session', 'Laravel6BasicShoda\HelloController@ses_put');
+
+Route::get('/laravel6basicshoda/auth', 'Laravel6BasicShoda\HelloController@getAuth');
+Route::post('/laravel6basicshoda/auth', 'Laravel6BasicShoda\HelloController@postAuth');
 
 
 
@@ -114,3 +124,7 @@ Route::get('/dotinstall/js_carousel', function () {
     return view('dotinstall.js_carousel.index');
 });
 // ********************* ドットインストール（ルーティング終了） *********************
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
