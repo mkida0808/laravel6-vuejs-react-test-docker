@@ -4,3 +4,6 @@ phpmyadmin/
 docker-compose.yml
 .gitignore
 .DS_Store
+.vscode/
+src/.gitignore
+.gitignore
