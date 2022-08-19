@@ -123,5 +123,11 @@ ENV LANG="ja_JP.UTF-8" \
 RUN unlink /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Japan /etc/localtime
 
+# xdebug3を導入
+RUN yum update -y && yum clean all
+RUN pecl install xdebug
+  # && docker-php-ext-enable xdebug
+# COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+
 # exec.
 CMD ["/usr/sbin/httpd", "-DFOREGROUND"]
