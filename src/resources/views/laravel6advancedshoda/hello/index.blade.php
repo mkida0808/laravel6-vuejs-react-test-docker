@@ -15,5 +15,11 @@
     </ul>
 
     <p><a href="/hello/download">ダウンロード</a></p>
+
+    <form action="/laravel6advancedshoda/hello/upload" method="post" enctype="multipart/form-data">
+        @csrf
+        <input type="file" name="file">
+        <input type="submit">
+    </form>
 </body>
 </html>

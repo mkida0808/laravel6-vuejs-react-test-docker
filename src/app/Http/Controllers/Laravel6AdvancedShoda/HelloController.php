@@ -44,4 +44,12 @@ class HelloController extends Controller
     {
         return Storage::disk('public')->download($this->fname);
     }
+
+    public function upload(Request $request)
+    {
+        $ext = '.' . $request->file('file')->extension();
+        // Storage::disk('local')->putFile('files', $request->file('file'));
+        Storage::disk('public')->putFileAs('files', $request->file('file'), 'uploaded' . $ext);
+        return redirect()->route('hello');
+    }
 }

@@ -61,6 +61,7 @@ Route::prefix('laravel6advancedshoda')->namespace('Laravel6AdvancedShoda')->grou
         Route::get('/hello', "HelloController@index")->name('hello');
         Route::get('/hello/{msg}', "HelloController@other");
         Route::get('/hello/download', "HelloController@download");
+        Route::post('/hello/upload', "HelloController@upload");
     // });
 });
 // ********************* PHPフレームワークLaravel実践開発（ルーティング終了） *********************
