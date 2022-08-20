@@ -5,29 +5,33 @@ namespace App\Http\Controllers\Laravel6AdvancedShoda;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Laravel6AdvancedShoda\Person;
+use Illuminate\Support\Facades\Storage;
 
 class HelloController extends Controller
 {
-    // public function index(Request $request)
+    private $fname;
+
+    public function __construct()
+    {
+        $this->fname = 'sample.txt';
+    }
+
     public function index()
     {
-        function __construct()
-        {
-            config(['sample.message' => '新しいメッセージ']);
-        }
-
+        $sample_msg = $this->fname;
+        $sample_data = Storage::get($this->fname);
         $data = [
-            'msg' => config('sample.message'),
-            'data' => config('sample.data'),
+            'msg' => $sample_msg,
+            'data' => explode(PHP_EOL, $sample_data),
         ];
         return view('laravel6advancedshoda.hello.index', $data);
     }
 
-    // public function other(Request $request)
-    // {
-    //     $data = [
-    //         'msg' => $request->bye,
-    //     ];
-    //     return view('laravel6advancedshoda.hello.index', $data);
-    // }
+    public function other($msg)
+    {
+        // $data = Storage::get($this->fname) . PHP_EOL . $msg;
+        // Storage::put($this->fname, $data);
+        Storage::append($this->fname, $msg);
+        return redirect()->route('hello');
+    }
 }
