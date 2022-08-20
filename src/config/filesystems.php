@@ -71,6 +71,13 @@ return [
             'url' => env('APP_URL') . '/storage/logs',
         ],
 
+        'ftp' => [
+            'driver' => 'ftp',
+            'host' => 'hostname',
+            'username' => 'username',
+            'password' => 'password',
+        ],
+
     ],
 
 ];
