@@ -9,7 +9,7 @@ use App\Models\Laravel6AdvancedShoda\Person;
 class HelloController extends Controller
 {
     // public function index(Request $request)
-    public function index(Person $person)
+    public function index($person)
     {
         $data = [
             'msg' => $person
