@@ -9,10 +9,16 @@ use App\Models\Laravel6AdvancedShoda\Person;
 class HelloController extends Controller
 {
     // public function index(Request $request)
-    public function index($person)
+    public function index()
     {
+        function __construct()
+        {
+            config(['sample.message' => '新しいメッセージ']);
+        }
+
         $data = [
-            'msg' => $person
+            'msg' => config('sample.message'),
+            'data' => config('sample.data'),
         ];
         return view('laravel6advancedshoda.hello.index', $data);
     }
