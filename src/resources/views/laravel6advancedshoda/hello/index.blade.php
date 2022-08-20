@@ -6,12 +6,20 @@
 </head>
 <body>
     <h1>Hello/Index</h1>
-    <p>{!! $msg !!}</p>
+    {{-- <p>{!! $msg !!}</p> --}}
 
     <form action="/laravel6advancedshoda/hello" method="post">
         @csrf
-        <input type="text" name="msg">
+        <input type="text" name="name">
+        <input type="text" name="mail">
+        <input type="text" name="tel">
         <input type="submit">
     </form>
+
+    <ul>
+        @for ($i = 0; $i < count($keys); $i++)
+        <li>{{ $keys[$i] }} - {{ $values[$i] }}</li>
+        @endfor
+    </ul>
 </body>
 </html>
