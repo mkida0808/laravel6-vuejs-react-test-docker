@@ -32,7 +32,7 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
-        Route::model('person', Person::class);
+        // Route::model('person', Person::class);
     }
 
     /**

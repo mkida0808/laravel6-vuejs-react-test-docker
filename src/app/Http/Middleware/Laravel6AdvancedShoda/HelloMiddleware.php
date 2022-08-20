@@ -15,11 +15,11 @@ class HelloMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $data = [
-            'hello' => 'Hello! This is Middleware!',
-            'bye' => 'Good-bye, Middleware...',
-        ];
-        $request->merge($data);
+        // $data = [
+        //     'hello' => 'Hello! This is Middleware!',
+        //     'bye' => 'Good-bye, Middleware...',
+        // ];
+        // $request->merge($data);
         return $next($request);
     }
 }
