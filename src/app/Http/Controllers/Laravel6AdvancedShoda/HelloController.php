@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Laravel6AdvancedShoda;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Models\Laravel6AdvancedShoda\Person;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,22 +17,14 @@ class HelloController extends Controller
         $this->fname = 'hello.txt';
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $dir = '/';
-        $all = Storage::disk('logs')->allFiles($dir);
-        $data = [
-            'msg' => 'DIR: ' . $dir,
-            'data' => $all,
-        ];
+        $msg = 'please input text:';
+        if ($request->isMethod('post')) {
+            $msg = 'you typed: ' . $request->input('msg');
+        }
+        $data = ['msg' => $msg];
         return view('laravel6advancedshoda.hello.index', $data);
-        // $sample_msg = Storage::disk('public')->url($this->fname);
-        // $sample_data = Storage::disk('public')->get($this->fname);
-        // $data = [
-        //     'msg' => $sample_msg,
-        //     'data' => explode(PHP_EOL, $sample_data),
-        // ];
-        // return view('laravel6advancedshoda.hello.index', $data);
     }
 
     public function other($msg)
