@@ -54,6 +54,16 @@ Route::prefix('laravel6basicshoda')->group(function () {
 // ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
 
 
+// ********************* PHPフレームワークLaravel実践開発（ルーティング開始） *********************
+// ルートパラメータとして値を取得する場合
+// Route::get('/laravel6basicshoda/{id?}/{pass?}', 'Laravel6BasicShoda\HelloController@index');
+// クエリ文字列として値を取得する場合
+Route::prefix('laravel6advancedshoda')->group(function () {
+    Route::get('/hello/{id}', "Laravel6AdvancedShoda\HelloController@index")->where('id', '[0-9]+')->name('hello');
+    Route::get('/hello/other', "Laravel6AdvancedShoda\HelloController@other");
+});
+// ********************* PHPフレームワークLaravel実践開発（ルーティング終了） *********************
+
 
 Route::get('/', function () {
     return view('welcome');
