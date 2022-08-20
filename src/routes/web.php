@@ -1,6 +1,6 @@
 <?php
 
-// use App\Http\Middleware\Laravel6BasicShoda\HelloMiddleware;
+use App\Http\Middleware\Laravel6AdvancedShoda\HelloMiddleware;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,12 +55,12 @@ Route::prefix('laravel6basicshoda')->group(function () {
 
 
 // ********************* PHPフレームワークLaravel実践開発（ルーティング開始） *********************
-// ルートパラメータとして値を取得する場合
-// Route::get('/laravel6basicshoda/{id?}/{pass?}', 'Laravel6BasicShoda\HelloController@index');
-// クエリ文字列として値を取得する場合
 Route::prefix('laravel6advancedshoda')->group(function () {
-    Route::get('/hello/{id}', "Laravel6AdvancedShoda\HelloController@index")->where('id', '[0-9]+')->name('hello');
-    Route::get('/hello/other', "Laravel6AdvancedShoda\HelloController@other");
+    Route::middleware([HelloMiddleware::class])->group(function () {
+        // Route::get('/hello/{id}', "Laravel6AdvancedShoda\HelloController@index")->where('id', '[0-9]+')->name('hello');
+        Route::get('/hello', "Laravel6AdvancedShoda\HelloController@index");
+        Route::get('/hello/other', "Laravel6AdvancedShoda\HelloController@other");
+    });
 });
 // ********************* PHPフレームワークLaravel実践開発（ルーティング終了） *********************
 
