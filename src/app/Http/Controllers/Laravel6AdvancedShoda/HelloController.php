@@ -39,4 +39,9 @@ class HelloController extends Controller
         Storage::disk('local')->move('public/bk_' . $this->fname, 'bk_' . $this->fname);
         return redirect()->route('hello');
     }
+
+    public function download()
+    {
+        return Storage::disk('public')->download($this->fname);
+    }
 }

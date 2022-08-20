@@ -13,5 +13,7 @@
         <li>{{ $item }}</li>
         @endforeach
     </ul>
+
+    <p><a href="/hello/download">ダウンロード</a></p>
 </body>
 </html>
