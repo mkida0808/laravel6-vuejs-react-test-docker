@@ -23,17 +23,15 @@ class HelloController extends Controller
         $keys = [];
         $values = [];
         if ($request->isMethod('post')) {
-            $form = $request->all();
-            $result = '<html><body>';
-            foreach ($form as $key => $value)
-            {
-                $result .= $key . ': ' . $value ."<br>";
-            }
-            $result .= '</body></html>';
-            $response->setContent($result);
-            return $response;
-            // $keys = array_keys($form);
-            // $values = array_values($form);
+            $form = $request->only(['name', 'mail']);
+            $keys = array_keys($form);
+            $values = array_values($form);
+            $data = [
+                'msg' => 'you inputed.',
+                'keys' => $keys,
+                'values' => $values,
+            ];
+            return view('laravel6advancedshoda.hello.index', $data);
         }
         $data = [
             'msg' => $msg,
