@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\MyClasses\MyService;
+use App\MyClasses\Laravel6AdvancedShoda\MyService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
         //     $myservice->setId(0);
         //     return $myservice;
         // });
-        app()->when('App\MyClasses\MyService')
+        app()->when('App\MyClasses\Laravel6AdvancedShoda\MyService')
             ->needs('$id')
             ->give(1);
     }

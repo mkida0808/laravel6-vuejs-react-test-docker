@@ -1,5 +1,5 @@
 <?php
-namespace App\MyClasses;
+namespace App\MyClasses\Laravel6AdvancedShoda;
 
 class MyService {
     private $serial;
