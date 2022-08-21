@@ -10,14 +10,14 @@ use App\MyClasses\MyService;
 
 class HelloController extends Controller
 {
-    public function index()
+    public function index(int $id = -1)
     {
         // $myservice = app('App\MyClasses\MyService');
-        // $myservice = app()->make('App\MyClasses\MyService');
-        $myservice = resolve('App\MyClasses\MyService');
+        $myservice = app()->makeWith('App\MyClasses\MyService', ['id' => $id]);
+        // $myservice = resolve('App\MyClasses\MyService');
         $data = [
             'msg' => $myservice->say(),
-            'data' => $myservice->data(),
+            'data' => $myservice->alldata(),
         ];
 
         return view('laravel6advancedshoda.hello.index', $data);
