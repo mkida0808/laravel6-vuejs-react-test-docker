@@ -60,7 +60,7 @@ Route::prefix('laravel6advancedshoda')->namespace('Laravel6AdvancedShoda')->grou
         // Route::get('/hello/{id}', "HelloController@index")->where('id', '[0-9]+')->name('hello');
         Route::get('/hello', "HelloController@index")->name('hello');
         Route::post('/hello', "HelloController@index");
-        Route::get('/hello/{msg}', "HelloController@other");
+        Route::get('/hello/other', "HelloController@other");
         Route::get('/hello/download', "HelloController@download");
         Route::post('/hello/upload', "HelloController@upload");
     // });

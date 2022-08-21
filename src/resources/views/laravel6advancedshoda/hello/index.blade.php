@@ -8,7 +8,7 @@
     <h1>Hello/Index</h1>
     <p>{!! $msg !!}</p>
 
-    <form action="/laravel6advancedshoda/hello" method="post">
+    <form action="/laravel6advancedshoda/hello" method="get">
         @csrf
         <input type="text" name="name" value="{{ old('name') }}">
         <input type="text" name="mail" value="{{ old('mail') }}">
