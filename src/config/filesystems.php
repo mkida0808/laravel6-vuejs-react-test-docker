@@ -65,6 +65,19 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'logs' => [
+            'driver' => 'local',
+            'root' => storage_path('logs'),
+            'url' => env('APP_URL') . '/storage/logs',
+        ],
+
+        'ftp' => [
+            'driver' => 'ftp',
+            'host' => 'hostname',
+            'username' => 'username',
+            'password' => 'password',
+        ],
+
     ],
 
 ];

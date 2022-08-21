@@ -1,6 +1,6 @@
 <?php
 
-// use App\Http\Middleware\Laravel6BasicShoda\HelloMiddleware;
+use App\Http\Middleware\Laravel6AdvancedShoda\HelloMiddleware;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,41 +17,55 @@
 // ルートパラメータとして値を取得する場合
 // Route::get('/laravel6basicshoda/{id?}/{pass?}', 'Laravel6BasicShoda\HelloController@index');
 // クエリ文字列として値を取得する場合
-Route::prefix('laravel6basicshoda')->group(function () {
+Route::prefix('laravel6basicshoda')->namespace('Laravel6BasicShoda')->group(function () {
     // Hello
-    Route::get('/', 'Laravel6BasicShoda\HelloController@index')->middleware('auth');
-    Route::post('/', 'Laravel6BasicShoda\HelloController@post');
-    Route::get('/add', 'Laravel6BasicShoda\HelloController@add');
-    Route::post('/add', 'Laravel6BasicShoda\HelloController@create');
-    Route::get('/edit', 'Laravel6BasicShoda\HelloController@edit');
-    Route::post('/edit', 'Laravel6BasicShoda\HelloController@update');
-    Route::get('/del', 'Laravel6BasicShoda\HelloController@del');
-    Route::post('/del', 'Laravel6BasicShoda\HelloController@remove');
-    Route::get('/show', 'Laravel6BasicShoda\HelloController@show');
+    Route::get('/', 'HelloController@index')->middleware('auth');
+    Route::post('/', 'HelloController@post');
+    Route::get('/add', 'HelloController@add');
+    Route::post('/add', 'HelloController@create');
+    Route::get('/edit', 'HelloController@edit');
+    Route::post('/edit', 'HelloController@update');
+    Route::get('/del', 'HelloController@del');
+    Route::post('/del', 'HelloController@remove');
+    Route::get('/show', 'HelloController@show');
     // Person
-    Route::get('/person', 'Laravel6BasicShoda\PersonController@index');
-    Route::get('/person/find', 'Laravel6BasicShoda\PersonController@find');
-    Route::post('/person/find', 'Laravel6BasicShoda\PersonController@search');
-    Route::get('/person/add', 'Laravel6BasicShoda\PersonController@add');
-    Route::post('/person/add', 'Laravel6BasicShoda\PersonController@create');
-    Route::get('/person/edit', 'Laravel6BasicShoda\PersonController@edit');
-    Route::post('/person/edit', 'Laravel6BasicShoda\PersonController@update');
-    Route::get('/person/del', 'Laravel6BasicShoda\PersonController@delete');
-    Route::post('/person/del', 'Laravel6BasicShoda\PersonController@remove');
+    Route::get('/person', 'PersonController@index');
+    Route::get('/person/find', 'PersonController@find');
+    Route::post('/person/find', 'PersonController@search');
+    Route::get('/person/add', 'PersonController@add');
+    Route::post('/person/add', 'PersonController@create');
+    Route::get('/person/edit', 'PersonController@edit');
+    Route::post('/person/edit', 'PersonController@update');
+    Route::get('/person/del', 'PersonController@delete');
+    Route::post('/person/del', 'PersonController@remove');
     // Board
-    Route::get('/board', 'Laravel6BasicShoda\BoardController@index');
-    Route::get('/board/add', 'Laravel6BasicShoda\BoardController@add');
-    Route::post('/board/add', 'Laravel6BasicShoda\BoardController@create');
+    Route::get('/board', 'BoardController@index');
+    Route::get('/board/add', 'BoardController@add');
+    Route::post('/board/add', 'BoardController@create');
     // Restdata
-    Route::resource('/rest', 'Laravel6BasicShoda\RestdataController');
-    Route::get('/rest', 'Laravel6BasicShoda\HelloController@rest');
+    Route::resource('/rest', 'RestdataController');
+    Route::get('/rest', 'HelloController@rest');
     // Hello（追加分）
-    Route::get('/session', 'Laravel6BasicShoda\HelloController@ses_get');
-    Route::post('/session', 'Laravel6BasicShoda\HelloController@ses_put');
-    Route::get('/auth', 'Laravel6BasicShoda\HelloController@getAuth');
-    Route::post('/auth', 'Laravel6BasicShoda\HelloController@postAuth');
+    Route::get('/session', 'HelloController@ses_get');
+    Route::post('/session', 'HelloController@ses_put');
+    Route::get('/auth', 'HelloController@getAuth');
+    Route::post('/auth', 'HelloController@postAuth');
 });
 // ********************* PHPフレームワークLaravel入門第2版（ルーティング終了） *********************
+
+
+// ********************* PHPフレームワークLaravel実践開発（ルーティング開始） *********************
+Route::prefix('laravel6advancedshoda')->namespace('Laravel6AdvancedShoda')->group(function () {
+    // Route::middleware([HelloMiddleware::class])->group(function () {
+        // Route::get('/hello/{id}', "HelloController@index")->where('id', '[0-9]+')->name('hello');
+        Route::get('/hello', "HelloController@index")->name('hello');
+        Route::post('/hello', "HelloController@index");
+        Route::get('/hello/other', "HelloController@other");
+        Route::get('/hello/download', "HelloController@download");
+        Route::post('/hello/upload', "HelloController@upload");
+    // });
+});
+// ********************* PHPフレームワークLaravel実践開発（ルーティング終了） *********************
 
 
 
