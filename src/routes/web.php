@@ -58,7 +58,7 @@ Route::prefix('laravel6basicshoda')->namespace('Laravel6BasicShoda')->group(func
 Route::prefix('laravel6advancedshoda')->namespace('Laravel6AdvancedShoda')->group(function () {
     // Route::middleware([HelloMiddleware::class])->group(function () {
         // Route::get('/hello/{id}', "HelloController@index")->where('id', '[0-9]+')->name('hello');
-        Route::get('/hello/{id}', "HelloController@index")->name('hello');
+        Route::get('/hello/{id?}', "HelloController@index")->name('hello');
         // Route::post('/hello', "HelloController@index");
         // Route::get('/hello/other', "HelloController@other");
         // Route::get('/hello/download', "HelloController@download");
