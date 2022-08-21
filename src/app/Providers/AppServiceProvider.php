@@ -36,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
         //     ->give(1);
         app()->bind(
             'App\MyClasses\Laravel6AdvancedShoda\MyServiceInterface',
-            'App\MyClasses\Laravel6AdvancedShoda\MyService',
+            'App\MyClasses\Laravel6AdvancedShoda\PowerMyService',
         );
     }
 }
