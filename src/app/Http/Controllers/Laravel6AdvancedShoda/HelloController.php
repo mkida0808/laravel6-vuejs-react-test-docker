@@ -5,16 +5,16 @@ namespace App\Http\Controllers\Laravel6AdvancedShoda;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\MyClasses\Laravel6AdvancedShoda\MyService;
+use App\MyClasses\Laravel6AdvancedShoda\MyServiceInterface;
 
 
 
 class HelloController extends Controller
 {
-    function __construct(MyService $myservice)
+    function __construct()
     {
-        $myservice = app('App\MyClasses\Laravel6AdvancedShoda\MyService');
     }
-    public function index(MyService $myservice, int $id = -1)
+    public function index(MyServiceInterface $myservice, int $id = -1)
     {
         $myservice->setId($id);
         $data = [

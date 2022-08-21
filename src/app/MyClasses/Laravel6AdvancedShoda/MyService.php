@@ -1,17 +1,17 @@
 <?php
 namespace App\MyClasses\Laravel6AdvancedShoda;
 
-class MyService {
+class MyService implements MyServiceInterface {
     private $serial;
     private $id = -1;
     private $msg = 'No id...';
     private $data = ['Hello', 'Welcome', 'bye'];
 
-    public function __construct(int $id)
+    public function __construct()
     {
-        $this->setId($id);
-        $this->serial = rand();
-        echo "[" . $this->serial . "]";
+        // $this->setId($id);
+        // $this->serial = rand();
+        // echo "[" . $this->serial . "]";
     }
 
     public function setId($id)
