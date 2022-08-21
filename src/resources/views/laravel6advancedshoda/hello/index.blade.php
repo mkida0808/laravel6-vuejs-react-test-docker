@@ -10,9 +10,9 @@
 
     <form action="/laravel6advancedshoda/hello" method="post">
         @csrf
-        <input type="text" name="name">
-        <input type="text" name="mail">
-        <input type="text" name="tel">
+        <input type="text" name="name" value="{{ old('name') }}">
+        <input type="text" name="mail" value="{{ old('mail') }}">
+        <input type="text" name="tel" value="{{ old('tel') }}">
         <input type="submit">
     </form>
 
