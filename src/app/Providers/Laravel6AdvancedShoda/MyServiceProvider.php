@@ -15,8 +15,9 @@ class MyServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        app()->singleton('myservice', PowerMyService::class);
         app()->singleton(MyServiceInterface::class, PowerMyService::class);
-        echo "register" . PHP_EOL;
+        echo "MyServiceProvider/register" . PHP_EOL;
     }
 
     /**
