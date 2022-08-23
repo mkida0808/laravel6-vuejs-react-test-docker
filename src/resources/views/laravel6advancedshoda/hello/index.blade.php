@@ -8,18 +8,10 @@
     <h1>Hello/Index</h1>
     <p>{!! $msg !!}</p>
 
-    <form action="/laravel6advancedshoda/hello" method="get">
-        @csrf
-        <input type="text" name="name" value="{{ old('name') }}">
-        <input type="text" name="mail" value="{{ old('mail') }}">
-        <input type="text" name="tel" value="{{ old('tel') }}">
-        <input type="submit">
-    </form>
-
     <ul>
-        @for ($i = 0; $i < count($keys); $i++)
-        <li>{{ $keys[$i] }} - {{ $values[$i] }}</li>
-        @endfor
+        @foreach ($data as $item)
+            <li>{!! $item !!}</li>
+        @endforeach
     </ul>
 </body>
 </html>
