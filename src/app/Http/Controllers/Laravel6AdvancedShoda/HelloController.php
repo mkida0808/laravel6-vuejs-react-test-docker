@@ -10,16 +10,13 @@ use Illuminate\Support\Facades\DB;
 
 class HelloController extends Controller
 {
-    public function index($id = -1)
+    public function index()
     {
-        if ($id >= 0) {
-            $msg = 'get id: ' . $id;
-            $result = [DB::table('people')->find($id)];
-        } else {
-            $msg = 'get people records.';
-            $result = DB::table('people')->get();
-
-        }
+        $name = DB::table('people')->pluck('name')->all();
+        // $value = $name->toArray();
+        // $value = $name->all();
+        $msg = implode(', ', $name);
+        $result = DB::table('people')->get();
         $data = [
             'msg' => $msg,
             'data' => $result,
