@@ -6,11 +6,11 @@
 </head>
 <body>
     <h1>Hello/Index</h1>
-    <p>{!! $msg !!}</p>
+    <p>{{ $msg }}</p>
 
     <ul>
         @foreach ($data as $item)
-            <li>{!! $item !!}</li>
+            <li>{{ $item->name}} [{{ $item->mail}}, {{ $item->age }}]</li>
         @endforeach
     </ul>
 </body>
