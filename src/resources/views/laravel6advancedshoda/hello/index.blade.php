@@ -14,6 +14,5 @@
             <li>{{ $item->id }}. {{ $item->name}} [{{ $item->mail}}, {{ $item->age }}]</li>
         @endforeach
     </ul>
-    {!! $data->links() !!}
 </body>
 </html>
