@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class HelloController extends Controller
 {
-    public function index()
+    public function index($id)
     {
         $data = [
             'msg' => '',
@@ -18,15 +18,19 @@ class HelloController extends Controller
         ];
         $msg = 'get: ';
         $result = [];
-        DB::table('people')->orderBy('name', 'asc')->chunk(2, function ($items) use (&$msg, &$result) {
-            foreach ($items as $item) {
-                $msg .= $item->id . ':' . $item->name . ', ';
-                $result += array_merge($result, [$item]);
-                break;
+        $count = 0;
+        DB::table('people')->chunkById(3, function ($items) use (&$msg, &$result, &$id, &$count) {
+            if ($count == $id) {
+                foreach ($items as $item) {
+                    $msg .= $item->id . ':' . $item->name . ', ';
+                    $result += array_merge($result, [$item]);
+                }
+                return false;
             }
+            $count++;
             return true;
         });
-        $result = DB::table('people')->get();
+        // $result = DB::table('people')->get();
         $data = [
             'msg' => $msg,
             'data' => $result,
