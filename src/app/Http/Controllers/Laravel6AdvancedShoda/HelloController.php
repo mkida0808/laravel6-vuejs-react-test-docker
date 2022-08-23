@@ -10,13 +10,13 @@ use Illuminate\Support\Facades\DB;
 
 class HelloController extends Controller
 {
-    public function index(int $id = -1)
+    public function index($id = -1)
     {
         if ($id >= 0) {
-            $msg = 'get ID <= ' . $id;
+            $msg = 'get name like "' . $id . '".';
             $result = DB::table('people')
                 ->select('id', 'name', 'mail', 'age')
-                ->where('id', '<=', $id)
+                ->where('name', 'like', '%' . $id . '%')
                 ->get();
         } else {
             $msg = 'get record people';
