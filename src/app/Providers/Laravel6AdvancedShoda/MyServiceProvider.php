@@ -3,8 +3,8 @@
 namespace App\Providers\Laravel6AdvancedShoda;
 
 use Illuminate\Support\ServiceProvider;
-use App\MyClasses\Laravel6AdvancedShoda\MyServiceInterface;
-use App\MyClasses\Laravel6AdvancedShoda\PowerMyService;
+// use App\MyClasses\Laravel6AdvancedShoda\MyServiceInterface;
+// use App\MyClasses\Laravel6AdvancedShoda\PowerMyService;
 
 class MyServiceProvider extends ServiceProvider
 {
@@ -15,9 +15,9 @@ class MyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        app()->singleton('myservice', PowerMyService::class);
-        app()->singleton(MyServiceInterface::class, PowerMyService::class);
-        echo "MyServiceProvider/register" . PHP_EOL;
+        app()->singleton('myservice', 'App\MyClasses\Laravel6AdvancedShoda\PowerMyService');
+        app()->singleton('App\MyClasses\Laravel6AdvancedShoda\MyServiceInterface', 'App\MyClasses\Laravel6AdvancedShoda\PowerMyService');
+        // echo "MyServiceProvider/register" . PHP_EOL;
     }
 
     /**
@@ -27,6 +27,6 @@ class MyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        echo "boot" . PHP_EOL;
+        // echo "boot" . PHP_EOL;
     }
 }

@@ -12,17 +12,12 @@ use App\Facades\Laravel6AdvancedShoda\MyService;
 
 class HelloController extends Controller
 {
-    public function index(int $id = -1)
+    public function index(Request $request)
     {
-        // $myservice->setId($id);
-        MyService::setId($id);
         $data = [
-            // 'msg' => $myservice->say(),
-            // 'data' => $myservice->alldata(),
-            'msg' => MyService::say(),
-            'data' => MyService::alldata(),
+            'msg' => $request->msg,
+            'data' => $request->alldata,
         ];
-
         return view('laravel6advancedshoda.hello.index', $data);
     }
 }
