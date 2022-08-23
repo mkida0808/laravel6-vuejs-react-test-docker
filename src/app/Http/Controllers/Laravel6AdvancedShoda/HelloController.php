@@ -10,20 +10,12 @@ use Illuminate\Support\Facades\DB;
 
 class HelloController extends Controller
 {
-    public function index($id = -1)
+    public function index()
     {
-        if ($id >= 0) {
-            $msg = 'get name like "' . $id . '".';
-            $result = DB::table('people')
-                ->select('id', 'name', 'mail', 'age')
-                ->where('name', 'like', '%' . $id . '%')
-                ->get();
-        } else {
-            $msg = 'get record people';
-            $result = DB::table('people')
-                ->select('id', 'name', 'mail', 'age')
-                ->get();
-        }
+        $msg = 'get people records.';
+        $first = DB::table('people')->first();
+        $last = DB::table('people')->orderBy('id', 'desc')->first();
+        $result = [$first, $last];
         $data = [
             'msg' => $msg,
             'data' => $result,
