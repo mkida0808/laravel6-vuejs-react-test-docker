@@ -15,7 +15,9 @@ class HelloController extends Controller
     {
         $data = [
             'msg' => 'show people record.',
-            'data' => Person::get(),
+            'data' => Person::orderBy('age', 'asc')->get()->reject(function ($person) {
+                return $person->age < 50;
+            }),
         ];
         return view('laravel6advancedshoda.hello.index', $data);
     }
