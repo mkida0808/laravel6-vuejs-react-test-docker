@@ -12,10 +12,20 @@ class HelloController extends Controller
 {
     public function index()
     {
-        $name = DB::table('people')->pluck('name')->all();
-        // $value = $name->toArray();
-        // $value = $name->all();
-        $msg = implode(', ', $name);
+        $data = [
+            'msg' => '',
+            'data' => [],
+        ];
+        $msg = 'get: ';
+        $result = [];
+        DB::table('people')->chunkById(2, function ($items) use (&$msg, &$result) {
+            foreach ($items as $item) {
+                $msg .= $item->id . ', ';
+                $result += array_merge($result, [$item]);
+                break;
+            }
+            return true;
+        });
         $result = DB::table('people')->get();
         $data = [
             'msg' => $msg,
