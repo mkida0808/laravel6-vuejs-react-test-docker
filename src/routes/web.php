@@ -61,6 +61,7 @@ Route::prefix('laravel6advancedshoda')->namespace('Laravel6AdvancedShoda')->grou
         // Route::get('/hello/{id}', "HelloController@index")->where('id', '[0-9]+')->name('hello');
         Route::get('/hello', "HelloController@index")->name('hello');
         Route::get('/hello/{id}/{name}', "HelloController@save");
+        Route::get('/hello/other', "HelloController@other");
         // Route::get('/hello/{id}', "HelloController@index")->name('hello');
         // Route::post('/hello', "HelloController@index");
         // Route::get('/hello/other', "HelloController@other");

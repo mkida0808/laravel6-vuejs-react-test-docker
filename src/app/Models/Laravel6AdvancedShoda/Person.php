@@ -34,14 +34,21 @@ class Person extends Model
         return $this->name . '(' . $this->age . ')' . ' [' . $this->mail . ']';
     }
 
-    // public function getNameAttribute($value)
-    // {
-    //     return strtoupper($value);
-    // }
+    public function getNameAttribute($value)
+    {
+        return strtoupper($value);
+    }
 
     public function setNameAttribute($value)
     {
         $this->attributes['name'] = strtoupper($value);
+    }
+
+    public function setAllDataAttribute(Array $value)
+    {
+        $this->attributes['name'] = $value[0];
+        $this->attributes['mail'] = $value[1];
+        $this->attributes['age'] = $value[2];
     }
 
     // public function newCollection(array $models = [])
