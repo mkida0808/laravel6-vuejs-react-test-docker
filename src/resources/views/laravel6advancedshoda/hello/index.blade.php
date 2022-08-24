@@ -10,7 +10,7 @@
     <p>{{ $msg }}</p>
 
     <ul>
-        @foreach ($result as $item)
+        @foreach ($data as $item)
             <li>{{ $item->id }}. {{ $item->name}} [{{ $item->mail}}, {{ $item->age }}]</li>
         @endforeach
     </ul>
