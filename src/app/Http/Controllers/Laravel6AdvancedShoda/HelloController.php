@@ -11,13 +11,21 @@ use App\Models\Laravel6AdvancedShoda\Person;
 
 class HelloController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $msg = 'show people record.';
+        $result = Person::get()->filter(function($person) {
+            return $person->age < 50;
+        });
+        $result2 = Person::get()->filter(function($person) {
+            return $person->age < 20;
+        });
+        $result3 = $result->diff($result2);
         $data = [
-            'msg' => 'show people record.',
-            'data' => Person::orderBy('age', 'asc')->get()->reject(function ($person) {
-                return $person->age < 50;
-            }),
+            'msg' => $msg,
+            'result' => $result,
+            'result2' => $result2,
+            'result3' => $result3,
         ];
         return view('laravel6advancedshoda.hello.index', $data);
     }
