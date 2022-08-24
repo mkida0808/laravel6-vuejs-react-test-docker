@@ -13,5 +13,11 @@
         <li>{{ $item->id }} - {{ $item->name }} - {{ $item->age }} - {{ $item->mail }}</li>
         @endforeach
     </ul>
+
+    <form action="/laravel6advancedshoda/hello" method="post">
+        @csrf
+        ID: <input type="text" id="id" name="id">
+        <input type="submit" value="send">
+    </form>
 </body>
 </html>

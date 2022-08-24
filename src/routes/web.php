@@ -59,7 +59,8 @@ Route::prefix('laravel6basicshoda')->namespace('Laravel6BasicShoda')->group(func
 Route::prefix('laravel6advancedshoda')->namespace('Laravel6AdvancedShoda')->group(function () {
     // Route::middleware([HelloMiddleware::class])->group(function () {
         Route::get('/hello', "HelloController@index")->name('hello');
-        Route::get('/hello/{person}', "HelloController@index");
+        Route::post('/hello', "HelloController@send");
+        // Route::get('/hello/{person}', "HelloController@index");
     // });
 });
 // ********************* PHPフレームワークLaravel実践開発（ルーティング終了） *********************
