@@ -37,4 +37,13 @@ class HelloController extends Controller
         $person->save();
         return redirect()->route('hello');
     }
+
+    public function json($id = -1)
+    {
+        if ($id == -1) {
+            return Person::get()->toJson();
+        } else {
+            return Person::find($id)->toJson();
+        }
+    }
 }
