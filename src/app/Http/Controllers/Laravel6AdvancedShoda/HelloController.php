@@ -15,9 +15,8 @@ class HelloController extends Controller
     {
         $msg = 'show people record.';
         $re = Person::get();
-        $fields = Person::get()->fields();
         $data = [
-            'msg' => implode(', ', $fields),
+            'msg' => $msg,
             'data' => $re,
         ];
         return view('laravel6advancedshoda.hello.index', $data);

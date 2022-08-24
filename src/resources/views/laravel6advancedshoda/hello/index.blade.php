@@ -11,7 +11,8 @@
 
     <ul>
         @foreach ($data as $item)
-            <li>{{ $item->id }}. {{ $item->name}} [{{ $item->mail}}, {{ $item->age }}]</li>
+            {{-- <li>{{ $item->id }}. {{ $item->name}} [{{ $item->mail}}, {{ $item->age }}]</li> --}}
+            <li>{{ $item->id }}. {{ $item->name_and_mail }}</li>
         @endforeach
     </ul>
 </body>
