@@ -16,9 +16,9 @@ class HelloController extends Controller
     {
         if ($person != null)
         {
-            // MyJob::dispatch($person);
-            // php artisan queue:workを実行後
-            MyJob::dispatch($person)->delay(now()->addMinutes(2));
+            $qname = $person->id % 2 == 0 ? 'even' : 'odd';
+            // MyJob::dispatch($person)->delay(now()->addMinutes(2));
+            MyJob::dispatch($person)->onQueue($qname);
         }
         $msg = 'show people record.';
         $result = Person::get();
