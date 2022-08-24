@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Collection;
 
 class Person extends Model
 {
-    // public function newCollection(array $models = [])
-    // {
-    //     return new MyCollection($models);
-    // }
+    protected  $guarded = ['id'];
+    public static $rules = [
+        'name' => 'required',
+        'mail' => 'email',
+        'age' => 'integer',
+    ];
 
     public function getNameAndIdAttribute()
     {
@@ -32,10 +34,21 @@ class Person extends Model
         return $this->name . '(' . $this->age . ')' . ' [' . $this->mail . ']';
     }
 
-    public function getNameAttribute($value)
+    // public function getNameAttribute($value)
+    // {
+    //     return strtoupper($value);
+    // }
+
+    public function setNameAttribute($value)
     {
-        return strtoupper($value);
+        $this->attributes['name'] = strtoupper($value);
     }
+
+    // public function newCollection(array $models = [])
+    // {
+    //     return new MyCollection($models);
+    // }
+
 }
 
 // class MyCollection extends Collection
