@@ -18,9 +18,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        'App\Events\Laravel6AdvancedShoda\PersonEvent' => [
-            'App\Listeners\Laravel6AdvancedShoda\PersonEventListener',
-        ],
+        // 'App\Events\Laravel6AdvancedShoda\PersonEvent' => [
+        //     'App\Listeners\Laravel6AdvancedShoda\PersonEventListener',
+        // ],
     ];
 
     /**
@@ -34,4 +34,8 @@ class EventServiceProvider extends ServiceProvider
 
         //
     }
+
+    protected $subscribe = [
+        'App\Listeners\Laravel6AdvancedShoda\MyEventSubscriber',
+    ];
 }
