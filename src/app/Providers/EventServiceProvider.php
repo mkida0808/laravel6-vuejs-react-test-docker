@@ -35,7 +35,12 @@ class EventServiceProvider extends ServiceProvider
         //
     }
 
-    protected $subscribe = [
-        'App\Listeners\Laravel6AdvancedShoda\MyEventSubscriber',
-    ];
+    // protected $subscribe = [
+    //     'App\Listeners\Laravel6AdvancedShoda\MyEventSubscriber',
+    // ];
+
+    public function shouldDiscoverEvents()
+    {
+        return true;
+    }
 }
