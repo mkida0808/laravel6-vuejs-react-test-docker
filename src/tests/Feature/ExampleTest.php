@@ -5,8 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 use App\Models\Laravel6AdvancedShoda\Person;
-use App\Models\Laravel6AdvancedShoda\Board;
-use Illuminate\Support\Facades\DB;
+use DatabaseSeeder;
 
 class ExampleTest extends TestCase
 {
@@ -18,24 +17,36 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $data = [
-            'id' => 21,
-            'name' => 'DUMMY',
-            'mail' => 'dummy@mail',
-            'age' => 0,
-        ];
-        $person = new Person();
-        $person->fill($data)->save();
-        $this->assertDatabaseHas('people', $data);
+        $this->seed(DatabaseSeeder::class);
+        $person = Person::find(1);
+        $data = $person->toArray();
 
-        $person->name = 'NOT-DUMMY';
-        $person->save();
-        $this->assertDatabaseMissing('people', $data);
-        $data['name'] = 'NOT-DUMMY';
         $this->assertDatabaseHas('people', $data);
 
         $person->delete();
         $this->assertDatabaseMissing('people', $data);
+
+        // $person->delete();
+        // $this->assertDatabaseMissing('people', $data);
+
+        // $data = [
+        //     'id' => 21,
+        //     'name' => 'DUMMY',
+        //     'mail' => 'dummy@mail',
+        //     'age' => 0,
+        // ];
+        // $person = new Person();
+        // $person->fill($data)->save();
+        // $this->assertDatabaseHas('people', $data);
+
+        // $person->name = 'NOT-DUMMY';
+        // $person->save();
+        // $this->assertDatabaseMissing('people', $data);
+        // $data['name'] = 'NOT-DUMMY';
+        // $this->assertDatabaseHas('people', $data);
+
+        // $person->delete();
+        // $this->assertDatabaseMissing('people', $data);
 
         // for ($i = 0; $i < 100; $i++)
         // {
