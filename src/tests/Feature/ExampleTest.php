@@ -17,14 +17,27 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->seed(DatabaseSeeder::class);
-        $person = Person::find(1);
+        for ($i = 0; $i < 100; $i++) {
+            factory(Person::class)->create();
+        }
+        $count = Person::get()->count();
+        $person = Person::find(rand(1, $count));
         $data = $person->toArray();
+        print_r($data);
 
         $this->assertDatabaseHas('people', $data);
 
         $person->delete();
         $this->assertDatabaseMissing('people', $data);
+
+        // $this->seed(DatabaseSeeder::class);
+        // $person = Person::find(1);
+        // $data = $person->toArray();
+
+        // $this->assertDatabaseHas('people', $data);
+
+        // $person->delete();
+        // $this->assertDatabaseMissing('people', $data);
 
         // $person->delete();
         // $this->assertDatabaseMissing('people', $data);
@@ -43,20 +56,6 @@ class ExampleTest extends TestCase
         // $person->save();
         // $this->assertDatabaseMissing('people', $data);
         // $data['name'] = 'NOT-DUMMY';
-        // $this->assertDatabaseHas('people', $data);
-
-        // $person->delete();
-        // $this->assertDatabaseMissing('people', $data);
-
-        // for ($i = 0; $i < 100; $i++)
-        // {
-        //     factory(Person::class)->create();
-        // }
-        // $count = Person::get()->count();
-        // $person = Person::find(rand(1, $count));
-        // $data = $person->toArray();
-        // print_r($data);
-
         // $this->assertDatabaseHas('people', $data);
 
         // $person->delete();
