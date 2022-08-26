@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class ExampleTest extends TestCase
 {
+    // use RefreshDatabase;
     /**
      * A basic test example.
      *
@@ -17,19 +18,38 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        for ($i = 0; $i < 100; $i++)
-        {
-            factory(Person::class)->create();
-        }
-        $count = Person::get()->count();
-        $person = Person::find(rand(1, $count));
-        $data = $person->toArray();
-        print_r($data);
+        $data = [
+            'id' => 21,
+            'name' => 'DUMMY',
+            'mail' => 'dummy@mail',
+            'age' => 0,
+        ];
+        $person = new Person();
+        $person->fill($data)->save();
+        $this->assertDatabaseHas('people', $data);
 
+        $person->name = 'NOT-DUMMY';
+        $person->save();
+        $this->assertDatabaseMissing('people', $data);
+        $data['name'] = 'NOT-DUMMY';
         $this->assertDatabaseHas('people', $data);
 
         $person->delete();
         $this->assertDatabaseMissing('people', $data);
+
+        // for ($i = 0; $i < 100; $i++)
+        // {
+        //     factory(Person::class)->create();
+        // }
+        // $count = Person::get()->count();
+        // $person = Person::find(rand(1, $count));
+        // $data = $person->toArray();
+        // print_r($data);
+
+        // $this->assertDatabaseHas('people', $data);
+
+        // $person->delete();
+        // $this->assertDatabaseMissing('people', $data);
 
         // $data = [
         //     'id' => 1,
