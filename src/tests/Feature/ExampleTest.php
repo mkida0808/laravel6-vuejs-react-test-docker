@@ -4,6 +4,9 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use App\Models\Laravel6AdvancedShoda\Person;
+use App\Models\Laravel6AdvancedShoda\Board;
+use Illuminate\Support\Facades\DB;
 
 class ExampleTest extends TestCase
 {
@@ -14,16 +17,29 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $data = [
-            'id' => 1,
-            'person_id' => 1,
-            'title' => 'タイトル1',
-            'message' => 'メッセージ1',
-            'age' => 34,
-        ];
-        $this->assertDatabaseHas('board', $data);
+        for ($i = 0; $i < 100; $i++)
+        {
+            factory(Person::class)->create();
+        }
+        $count = Person::get()->count();
+        $person = Person::find(rand(1, $count));
+        $data = $person->toArray();
+        print_r($data);
+
+        $this->assertDatabaseHas('people', $data);
+
+        $person->delete();
+        $this->assertDatabaseMissing('people', $data);
+
+        // $data = [
+        //     'id' => 1,
+        //     'person_id' => 1,
+        //     'title' => 'タイトル1',
+        //     'message' => 'メッセージ1',
+        // ];
+        // $this->assertDatabaseHas('boards', $data);
         // $data['id'] = 2;
-        // $this->assertDatabaseMissing('board', $data);
+        // $this->assertDatabaseMissing('boards', $data);
 
         // $this->get('/laravel6advancedshoda')->assertStatus(404);
         // $this->get('/laravel6advancedshoda/hoge')->assertStatus(404);
