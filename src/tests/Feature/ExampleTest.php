@@ -8,6 +8,8 @@ use App\Models\Laravel6AdvancedShoda\Person;
 use DatabaseSeeder;
 use Illuminate\Support\Facades\Bus;
 use App\Jobs\Laravel6AdvancedShoda\MyJob;
+use Illuminate\Support\Facades\Event;
+use App\Events\Laravel6AdvancedShoda\PersonEvent;
 
 class ExampleTest extends TestCase
 {
@@ -19,24 +21,35 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $id = 1;
-        $data = [
-            'id' => $id,
-            'name' => 'DUMMY',
-            'mail' => 'dummy@mail',
-            'age' => 0,
-        ];
-        $person = new Person();
-        $person->fill($data)->save();
-        $this->assertDatabaseHas('people', $data);
+        factory(Person::class)->create();
+        $person = factory(Person::class)->create();
 
-        Bus::fake();
-        Bus::assertNotDispatched(MyJob::class);
-        MyJob::dispatch($id);
-        Bus::assertDispatched(MyJob::class, function ($job) use ($id) {
-            $p = Person::find($id)->first();
-            return $job->getPersonId() == $p->id;
+        Event::fake();
+        Event::assertNotDispatched(PersonEvent::class);
+        event(new PersonEvent($person));
+        Event::assertDispatched(PersonEvent::class);
+        Event::assertDispatched(PersonEvent::class, function ($event) use ($person) {
+            return $event->person === $person;
         });
+
+        // $id = 1;
+        // $data = [
+        //     'id' => $id,
+        //     'name' => 'DUMMY',
+        //     'mail' => 'dummy@mail',
+        //     'age' => 0,
+        // ];
+        // $person = new Person();
+        // $person->fill($data)->save();
+        // $this->assertDatabaseHas('people', $data);
+
+        // Bus::fake();
+        // Bus::assertNotDispatched(MyJob::class);
+        // MyJob::dispatch($id);
+        // Bus::assertDispatched(MyJob::class, function ($job) use ($id) {
+        //     $p = Person::find($id)->first();
+        //     return $job->getPersonId() == $p->id;
+        // });
 
         // $list = [];
         // for ($i = 0; $i < 10; $i++)
